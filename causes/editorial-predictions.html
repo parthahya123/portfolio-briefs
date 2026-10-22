@@ -68,6 +68,7 @@
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#methodology">Methodology</a></li>
     <li><a href="#ranking">The ranking</a></li>
+    <li><a href="#falsifiability">Falsifiability index</a></li>
     <li><a href="#calibration">Calibration</a></li>
     <li><a href="#domain-breakdown">By domain</a></li>
     <li><a href="#publication-profiles">Publication profiles</a></li>
@@ -244,6 +245,139 @@
   </div>
 
   <p>The tiers reflect meaningful breaks. Only the New Statesman clears 70% strict accuracy — its 78% over 50 predictions, with only two fully incorrect calls in seven years, represents a genuinely unusual editorial forecasting record. Publications in Tier 3 (54–60%) are marginally better than a coin flip on strict accuracy, though their generous accuracy suggests they usually get the direction right even when the specifics are wrong. The WSJ at 46% is wrong more often than it is right. ZeroHedge at 16% is anti-informative: inverting its predictions would yield approximately 84% accuracy, better than any mainstream publication achieves normally.</p>
+
+
+  <h2 id="falsifiability">The falsifiability penalty: a composite index</h2>
+
+  <p>Raw accuracy scores conceal an important asymmetry: some publications that rank highly are doing so partly because they <em>avoid making falsifiable predictions</em>. A board that only commits when supremely confident will appear more accurate than one that takes genuine predictive risks — even if the selective board is actually less informative as a guide to the future. The New York Times extracts only 4.3 falsifiable predictions per year from an editorial board that publishes prolifically. The Economist extracts 7.9 per year through its formal annual forecasting features.</p>
+
+  <p>To partially correct for this, we compute a <strong>falsifiability score</strong> based on prediction density — predictions extracted per year, normalized 0–100 across the 13 publications. This is not a perfect measure (some publications cover narrower domains with fewer verifiable questions), but it captures meaningful variation between boards that actively engage the prediction game and those that systematically avoid it. We then compute a <strong>composite index</strong> weighting 70% strict accuracy and 30% falsifiability score. The composite should be read alongside the strict ranking, not as a replacement for it.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Publication</th>
+        <th>Strict accuracy</th>
+        <th>Preds / yr</th>
+        <th>Falsifiability (0–100)</th>
+        <th>Composite index</th>
+        <th>Composite rank</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="t1">
+        <td><strong>New Statesman</strong></td>
+        <td>78.0%</td>
+        <td>7.1</td>
+        <td>80</td>
+        <td>78.6</td>
+        <td>1</td>
+      </tr>
+      <tr class="t1">
+        <td><strong>The Economist</strong></td>
+        <td>61.8%</td>
+        <td>7.9</td>
+        <td>100</td>
+        <td>73.3</td>
+        <td>2 ↑ from #4</td>
+      </tr>
+      <tr class="t2">
+        <td><strong>The Guardian</strong></td>
+        <td>67.4%</td>
+        <td>6.6</td>
+        <td>64</td>
+        <td>66.4</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td><strong>Foreign Affairs</strong></td>
+        <td>53.3%</td>
+        <td>6.4</td>
+        <td>60</td>
+        <td>55.3</td>
+        <td>4 ↑ from #11</td>
+      </tr>
+      <tr>
+        <td><strong>Financial Times</strong></td>
+        <td>54.5%</td>
+        <td>6.3</td>
+        <td>56</td>
+        <td>55.0</td>
+        <td>5 ↑ from #9</td>
+      </tr>
+      <tr>
+        <td><strong>Washington Post</strong></td>
+        <td>58.5%</td>
+        <td>5.9</td>
+        <td>44</td>
+        <td>54.1</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td><strong>Bloomberg</strong></td>
+        <td>58.5%</td>
+        <td>5.9</td>
+        <td>44</td>
+        <td>54.1</td>
+        <td>6=</td>
+      </tr>
+      <tr>
+        <td><strong>National Review</strong></td>
+        <td>59.5%</td>
+        <td>5.3</td>
+        <td>28</td>
+        <td>50.0</td>
+        <td>8 ↓ from #5</td>
+      </tr>
+      <tr>
+        <td><strong>The Atlantic</strong></td>
+        <td>54.1%</td>
+        <td>5.3</td>
+        <td>28</td>
+        <td>46.3</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td><strong>New York Times</strong></td>
+        <td>63.3%</td>
+        <td>4.3</td>
+        <td>0</td>
+        <td>44.3</td>
+        <td>10 ↓↓ from #3</td>
+      </tr>
+      <tr>
+        <td><strong>Politico</strong></td>
+        <td>55.9%</td>
+        <td>4.9</td>
+        <td>16</td>
+        <td>43.9</td>
+        <td>11 ↓ from #8</td>
+      </tr>
+      <tr class="t4">
+        <td><strong>Wall Street Journal</strong></td>
+        <td>46.2%</td>
+        <td>5.6</td>
+        <td>36</td>
+        <td>43.1</td>
+        <td>12</td>
+      </tr>
+      <tr class="t5">
+        <td><strong>ZeroHedge</strong></td>
+        <td>15.9%</td>
+        <td>6.3</td>
+        <td>56</td>
+        <td>27.9</td>
+        <td>13</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <strong>Important caveat on the composite</strong>
+    Falsifiability score is a blunt proxy. It captures prediction density, not prediction difficulty or domain breadth. The Economist's high score reflects its annual forecasting format; Foreign Affairs' moderate score reflects broad global coverage. The NYT's low score partly reflects prediction avoidance and partly reflects a narrower domestic focus. The composite is best read as a check on the strict ranking rather than a replacement for it — it flags when high accuracy may partly reflect selectivity rather than genuine forecasting skill.
+  </div>
+
+  <p>The two publications that move most dramatically under the composite are the <strong>New York Times</strong> (drops from #3 to #10) and the <strong>Economist</strong> (rises from #4 to #2). The NYT's 63.3% strict accuracy is real, but its prediction selectivity means it produces roughly half as many falsifiable forecasts per year as the Economist. The composite treats this selectivity as a partial accountability deficit. The NYT editorial board is accurate on the predictions it commits to; it earns less credit precisely because it commits so rarely. The Economist, by contrast, runs explicit annual prediction roundups that generate many testable claims — accepting the reputational risk of being wrong in exchange for intellectual transparency.</p>
 
   <h2 id="calibration">Calibration: does confidence predict correctness?</h2>
 
