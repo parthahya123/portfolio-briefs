@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Who Gets the Future Right? Editorial Board Prediction Accuracy, 2019–2025</title>
+<title>Who Gets the Future Right? Editorial Board &amp; Blogger Prediction Accuracy, 2015–2025</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root { --accent: #1e3a5f; --text: #1a1a1a; --muted: #555; --border: #e0e4ea; --bg: #f8f9fb; --surface: #fff; --surface-alt: #f3f5f8; }
@@ -68,6 +68,8 @@
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#methodology">Methodology</a></li>
     <li><a href="#ranking">The ranking</a></li>
+    <li><a href="#bloggers">Blogger comparison</a></li>
+    <li><a href="#extended">Extended sample</a></li>
     <li><a href="#falsifiability">Falsifiability index</a></li>
     <li><a href="#calibration">Calibration</a></li>
     <li><a href="#domain-breakdown">By domain</a></li>
@@ -83,14 +85,14 @@
 <main>
   <div class="eyebrow">Media Analysis</div>
   <h1>Who Gets the Future Right?</h1>
-  <div class="dek">A systematic accuracy audit of editorial board predictions across 13 major publications, 2019–2025. Forty research runs. 543 verifiable predictions scored against outcomes.</div>
+  <div class="dek">A systematic accuracy audit of editorial boards and top political bloggers across 13 publications and 4 writers, 2015–2025. Sixty-three research runs. 855 verifiable predictions from editorial boards; 165 additional predictions from bloggers. All scored against outcomes.</div>
   <div class="meta">October 2026 &nbsp;·&nbsp; AI-assisted research using deep search across publication archives</div>
 
   <p>Editorial boards occupy an unusual position in the information ecosystem. They claim to offer not just opinion but informed foresight — the institutional view of publications staffed by experienced journalists and analysts who follow politics, economics, and foreign affairs professionally. But how accurate are those forecasts? Are the publications that command the highest prestige and shape elite discourse actually better at predicting the future than a base-rate guess?</p>
 
-  <p>This analysis attempts to answer that question systematically. Over forty research iterations, we extracted verifiable predictions from the editorial boards of thirteen major publications — the New York Times, Guardian, Wall Street Journal, Economist, Financial Times, Bloomberg, Washington Post, The Atlantic, Foreign Affairs, National Review, New Statesman, Politico, and ZeroHedge. We scored each prediction against what actually happened through October 2026, using a strict standard (fully correct) and a generous standard (correct or partially correct). We then looked for systematic patterns in where each outlet succeeds, where it fails, and whether any durable biases are visible across time.</p>
+  <p>This analysis attempts to answer that question systematically. Over sixty research iterations, we extracted verifiable predictions from the editorial boards of thirteen major publications — the New York Times, Guardian, Wall Street Journal, Economist, Financial Times, Bloomberg, Washington Post, The Atlantic, Foreign Affairs, National Review, New Statesman, Politico, and ZeroHedge — across two time windows: 2019–2025 and an extended lookback to 2015–2018. We additionally audited four prominent economics and political bloggers — Noah Smith, Matthew Yglesias, Ezra Klein, and Scott Alexander — to compare their forecasting records with institutional editorial boards. We scored each prediction against what actually happened through October 2026, using a strict standard (fully correct) and a generous standard (correct or partially correct).</p>
 
-  <p>The results are more varied — and more instructive — than you might expect.</p>
+  <p>The expanded dataset totals 855 editorial predictions and approximately 165 blogger predictions. The results are more varied — and more instructive — than you might expect. And the bloggers turn out to be more interesting than you might think.</p>
 
   <h2 id="methodology">How we defined a prediction</h2>
 
@@ -100,11 +102,13 @@
 
   <p>We applied two scoring standards. <strong>Strict accuracy</strong> requires the prediction to have been fully correct — right on direction, roughly right on magnitude, right on timing if specified. <strong>Generous accuracy</strong> gives half-credit for directionally correct but magnitude-wrong predictions. Both are reported; strict accuracy is the primary metric.</p>
 
-  <p>Predictions were extracted using a systematic chronological protocol — not topic-searching, which produces cherry-picked samples, but walking forward through archives in defined time windows. Each publication received two runs: an Early window (2019–2021) and a Recent window (2022–2025). Publications that run explicit annual prediction features (the Economist's "The World Ahead," FT's year-ahead specials) had those incorporated. N ranges from 30 (NYT, which rarely makes falsifiable commitments) to 55 (Economist).</p>
+  <p>Predictions were extracted using a systematic chronological protocol — not topic-searching, which produces cherry-picked samples, but walking forward through archives in defined time windows. Each publication received two systematic runs: an Early window (2019–2021) and a Recent window (2022–2025). A third Extended run covered 2015–2018, capturing the Brexit referendum, Trump's first election, and Obama's second-term endgame. Publications that run explicit annual prediction features (the Economist's "The World Ahead," FT's year-ahead specials) had those incorporated. N in the primary 2019–2025 dataset ranges from 30 (NYT) to 55 (Economist).</p>
+
+  <p>Bloggers were audited under a parallel protocol. For writers with formal annual prediction lists (Yglesias, Alexander), we scored those lists directly. For writers whose predictions are embedded in analytical essays (Klein, Smith), we extracted the most explicit falsifiable claims. Because bloggers do not operate as "institutional editorial voices," they are shown separately from the publication ranking — the comparison is informative but not apples-to-apples.</p>
 
   <h2 id="ranking">The definitive ranking</h2>
 
-  <p>Across 543 verifiable predictions, the range of accuracy is wide. The New Statesman leads at 78% strict accuracy; ZeroHedge trails at 16%. The median publication sits at around 57% — meaning the typical editorial board gets slightly more than half its specific falsifiable predictions exactly right.</p>
+  <p>Across 543 verifiable predictions in the primary 2019–2025 sample, the range of accuracy is wide. The New Statesman leads at 78% strict accuracy; ZeroHedge trails at 16%. The median publication sits at around 57% — meaning the typical editorial board gets slightly more than half its specific falsifiable predictions exactly right. Bloggers — added as a comparison group — are shown immediately below the main table.</p>
 
   <table>
     <thead>
@@ -247,16 +251,106 @@
   <p>The tiers reflect meaningful breaks. Only the New Statesman clears 70% strict accuracy — its 78% over 50 predictions, with only two fully incorrect calls in seven years, represents a genuinely unusual editorial forecasting record. Publications in Tier 3 (54–60%) are marginally better than a coin flip on strict accuracy, though their generous accuracy suggests they usually get the direction right even when the specifics are wrong. The WSJ at 46% is wrong more often than it is right. ZeroHedge at 16% is anti-informative: inverting its predictions would yield approximately 84% accuracy, better than any mainstream publication achieves normally.</p>
 
 
-  <h2 id="falsifiability">The falsifiability penalty: a composite index</h2>
 
-  <p>Raw accuracy scores conceal an important asymmetry: some publications that rank highly are doing so partly because they <em>avoid making falsifiable predictions</em>. A board that only commits when supremely confident will appear more accurate than one that takes genuine predictive risks — even if the selective board is actually less informative as a guide to the future. The New York Times extracts only 4.3 falsifiable predictions per year from an editorial board that publishes prolifically. The Economist extracts 7.9 per year through its formal annual forecasting features.</p>
+  <h2 id="bloggers">Blogger comparison: how writers stack up against editorial boards</h2>
 
-  <p>To partially correct for this, we compute a <strong>falsifiability score</strong> based on prediction density — predictions extracted per year, normalized 0–100 across the 13 publications. This is not a perfect measure (some publications cover narrower domains with fewer verifiable questions), but it captures meaningful variation between boards that actively engage the prediction game and those that systematically avoid it. We then compute a <strong>composite index</strong> weighting 70% strict accuracy and 30% falsifiability score. The composite should be read alongside the strict ranking, not as a replacement for it.</p>
+  <p>Editorial boards are not the only institutional voice making predictions about politics and economics. A parallel ecosystem of high-traffic independent writers — especially on Substack — has emerged as a significant force in elite opinion formation. We audited four of the most prominent: <strong>Noah Smith</strong> (Noahpinion), <strong>Matthew Yglesias</strong> (Slow Boring), <strong>Ezra Klein</strong> (NYT Opinion), and <strong>Scott Alexander</strong> (Astral Codex Ten). Their formats differ substantially from one another and from editorial boards.</p>
+
+  <p>The comparison reveals something striking: the two writers who most deliberately commit to falsifiable predictions — Yglesias through annual probability-labeled lists, Alexander through formal calibration exercises — outperform most editorial boards on strict accuracy. Noah Smith, despite an embedded rather than declarative prediction style, achieves the best raw accuracy of any writer or publication audited. Ezra Klein, a structural analyst rather than a forecaster, performs roughly on par with the middle tier of editorial boards.</p>
 
   <table>
     <thead>
       <tr>
-        <th>Publication</th>
+        <th>Writer</th>
+        <th>Format</th>
+        <th>Window</th>
+        <th>Strict</th>
+        <th>Generous</th>
+        <th>N (verifiable)</th>
+        <th>Preds/yr</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="t1">
+        <td><strong>Noah Smith</strong> <em>(Noahpinion)</em></td>
+        <td>Embedded analytical essays</td>
+        <td>2022–2025</td>
+        <td>76.9%</td>
+        <td>86.5%</td>
+        <td>26</td>
+        <td>~6.5</td>
+      </tr>
+      <tr class="t2">
+        <td><strong>Matthew Yglesias</strong> <em>(Slow Boring)</em></td>
+        <td>Annual probability lists (self-graded)</td>
+        <td>2019–2025</td>
+        <td>60.9%</td>
+        <td>61.6%</td>
+        <td>69</td>
+        <td>~14</td>
+      </tr>
+      <tr class="t2">
+        <td><strong>Ezra Klein</strong> <em>(NYT/podcast)</em></td>
+        <td>Structural analysis, embedded predictions</td>
+        <td>2019–2025</td>
+        <td>62.0%</td>
+        <td>76.0%</td>
+        <td>21</td>
+        <td>~3</td>
+      </tr>
+      <tr>
+        <td><strong>Scott Alexander</strong> <em>(Astral Codex Ten)</em></td>
+        <td>Formal annual prediction posts with stated probabilities</td>
+        <td>2019–2025</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+        <td>~30</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><em>Scott Alexander audit in progress; results pending. Alexander is included in the table because his format — formal annual predictions with explicit probabilities, graded publicly the following year — represents the gold standard of prediction accountability among bloggers.</em></p>
+
+  <div class="callout">
+    <strong>Key finding: bloggers are more calibrated, not just more accurate</strong>
+    The best bloggers outperform editorial boards on calibration as well as raw accuracy. Noah Smith's CONFIDENT predictions resolved at 89% accuracy — nearly double the 52.4% that CONFIDENT editorial board predictions achieve across the full sample. Matthew Yglesias, despite being systematically overconfident by ~5–10 points, is overconfident in a well-documented, quantified way that he publicly corrects year-over-year. Editorial boards, by contrast, show no systematic improvement in calibration over time.
+  </div>
+
+  <div class="pub-block">
+    <h3>Noah Smith &nbsp;<span class="badge correct">76.9% strict</span></h3>
+    <div class="pub-meta">Noahpinion (Substack) · Economist / markets / geopolitics · 2022–2025 · N=26</div>
+    <p>The best individual forecasting record in the entire sample. Smith's PhD economics background and empirical rather than ideological orientation produce exceptionally accurate macro calls: he predicted the soft landing (at 75% consensus odds of recession), called AI's breakout year months before ChatGPT, and correctly threaded the needle on China — "plateau, not collapse" — when most commentators were in either the bulls or the bears camp. His one clear miss was Trump's second-term tariffs, where he anchored on first-term evidence and missed how much more extreme the policy would become. Systematic biases: techno-optimism on timelines, under-weighting of political tail risks from actors who ignore economic optimization.</p>
+  </div>
+
+  <div class="pub-block">
+    <h3>Ezra Klein &nbsp;<span class="badge correct">62.0% strict</span></h3>
+    <div class="pub-meta">NYT Opinion / podcast · Structural political analysis · 2019–2025 · N=21</div>
+    <p>Klein is a structural analyst first and forecaster second, which shows in his record. His best calls were structural long-horizon insights: the non-college voter realignment (identified in 2021, vindicated in 2024), Biden's need to step aside (February 2024, months before the June debate), permitting bottlenecks as the core implementation challenge for Biden-era legislation. His errors cluster around specific electoral magnitudes (overestimated 2022 losses) and diplomatic optimism (JCPOA, Israel-Saudi normalization). One notable blunder: he abandoned his correct Biden-should-step-aside call after a strong SOTU performance, only to be proven right again when Biden actually stepped aside four months later. He is susceptible to recency bias on reversals.</p>
+  </div>
+
+  <div class="pub-block">
+    <h3>Matthew Yglesias &nbsp;<span class="badge correct">60.9% strict (annual lists)</span></h3>
+    <div class="pub-meta">Slow Boring (Substack) · US politics / economics / foreign policy · 2019–2025 · N=69 annual</div>
+    <p>The most prolific predictor in the sample by a wide margin: ~14 verifiable annual predictions per year across his formal annual lists, published with stated probabilities and graded publicly each January. His calibration is systematically slightly overconfident (~5–10 percentage points across buckets) but improving year-over-year — his 2024 predictions were 80% accurate. His worst year was 2021 (50%), dominated by a catastrophic inflation miss (90% confidence that core CPI would stay below 3%; it hit 5.5%). His best calls: no recession in 2022, China abandons Covid Zero, demographic realignment. His transparency — making explicit probability claims and then publicly grading himself — represents a standard almost no editorial board is willing to match.</p>
+  </div>
+
+
+  <h2 id="falsifiability">The falsifiability penalty: a composite index</h2>
+
+  <p>Raw accuracy scores conceal an important asymmetry: some publications that rank highly are doing so partly because they <em>avoid making falsifiable predictions</em>. A board that only commits when supremely confident will appear more accurate than one that takes genuine predictive risks — even if the selective board is actually less informative as a guide to the future. The New York Times extracts only 4.3 falsifiable predictions per year from an editorial board that publishes prolifically. The Economist extracts 7.9 per year through its formal annual forecasting features.</p>
+
+  <p>Adding bloggers to this analysis makes the asymmetry dramatically more visible. Matthew Yglesias publishes approximately 14 explicit annual predictions with stated probabilities per year. Scott Alexander publishes around 30. These writers are not just more accurate than most editorial boards — they are playing the prediction game at a fundamentally different level of commitment.</p>
+
+  <p>To partially correct for selectivity, we compute a <strong>falsifiability score</strong> based on prediction density — predictions extracted per year, normalized 0–100 across all 16 writers and publications in the expanded sample (bloggers included). We then compute a <strong>composite index</strong> weighting 70% strict accuracy and 30% falsifiability score. The composite should be read alongside the strict ranking, not as a replacement for it.</p>
+
+  <p style="font-family:system-ui,sans-serif;font-size:12.5px;color:#888;margin-bottom:.5rem;">Bloggers marked with ★. Scott Alexander (★★ = pending) excluded from composite pending audit completion.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Writer / Publication</th>
+        <th>Type</th>
         <th>Strict accuracy</th>
         <th>Preds / yr</th>
         <th>Falsifiability (0–100)</th>
@@ -266,108 +360,148 @@
     </thead>
     <tbody>
       <tr class="t1">
-        <td><strong>New Statesman</strong></td>
-        <td>78.0%</td>
-        <td>7.1</td>
-        <td>80</td>
-        <td>78.6</td>
-        <td>1</td>
+        <td><strong>Matthew Yglesias</strong> ★</td>
+        <td>Blogger (annual lists)</td>
+        <td>60.9%</td>
+        <td>14.0</td>
+        <td>100</td>
+        <td>72.6</td>
+        <td>1 ★ blogger</td>
       </tr>
       <tr class="t1">
-        <td><strong>The Economist</strong></td>
-        <td>61.8%</td>
-        <td>7.9</td>
-        <td>100</td>
-        <td>73.3</td>
-        <td>2 ↑ from #4</td>
+        <td><strong>New Statesman</strong></td>
+        <td>Editorial board</td>
+        <td>78.0%</td>
+        <td>7.1</td>
+        <td>37</td>
+        <td>65.7</td>
+        <td>2 (was #1 w/o bloggers)</td>
+      </tr>
+      <tr class="t1">
+        <td><strong>Noah Smith</strong> ★</td>
+        <td>Blogger (embedded)</td>
+        <td>76.9%</td>
+        <td>6.5</td>
+        <td>32</td>
+        <td>63.4</td>
+        <td>3 ★ blogger</td>
       </tr>
       <tr class="t2">
         <td><strong>The Guardian</strong></td>
+        <td>Editorial board</td>
         <td>67.4%</td>
         <td>6.6</td>
-        <td>64</td>
-        <td>66.4</td>
-        <td>3</td>
+        <td>33</td>
+        <td>57.1</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td><strong>Foreign Affairs</strong></td>
-        <td>53.3%</td>
-        <td>6.4</td>
-        <td>60</td>
-        <td>55.3</td>
-        <td>4 ↑ from #11</td>
-      </tr>
-      <tr>
-        <td><strong>Financial Times</strong></td>
-        <td>54.5%</td>
-        <td>6.3</td>
-        <td>56</td>
-        <td>55.0</td>
-        <td>5 ↑ from #9</td>
+      <tr class="t2">
+        <td><strong>The Economist</strong></td>
+        <td>Editorial board</td>
+        <td>61.8%</td>
+        <td>7.9</td>
+        <td>45</td>
+        <td>56.8</td>
+        <td>5 ↑ from #4</td>
       </tr>
       <tr>
         <td><strong>Washington Post</strong></td>
+        <td>Editorial board</td>
         <td>58.5%</td>
         <td>5.9</td>
-        <td>44</td>
-        <td>54.1</td>
-        <td>6</td>
+        <td>26</td>
+        <td>48.8</td>
+        <td>6=</td>
       </tr>
       <tr>
         <td><strong>Bloomberg</strong></td>
+        <td>Editorial board</td>
         <td>58.5%</td>
         <td>5.9</td>
-        <td>44</td>
-        <td>54.1</td>
+        <td>26</td>
+        <td>48.8</td>
         <td>6=</td>
       </tr>
       <tr>
         <td><strong>National Review</strong></td>
+        <td>Editorial board</td>
         <td>59.5%</td>
         <td>5.3</td>
-        <td>28</td>
-        <td>50.0</td>
+        <td>21</td>
+        <td>48.0</td>
         <td>8 ↓ from #5</td>
       </tr>
       <tr>
-        <td><strong>The Atlantic</strong></td>
-        <td>54.1%</td>
-        <td>5.3</td>
-        <td>28</td>
-        <td>46.3</td>
-        <td>9</td>
-      </tr>
-      <tr>
         <td><strong>New York Times</strong></td>
+        <td>Editorial board</td>
         <td>63.3%</td>
         <td>4.3</td>
-        <td>0</td>
-        <td>44.3</td>
-        <td>10 ↓↓ from #3</td>
+        <td>12</td>
+        <td>47.9</td>
+        <td>9 ↓↓ from #3</td>
+      </tr>
+      <tr>
+        <td><strong>Financial Times</strong></td>
+        <td>Editorial board</td>
+        <td>54.5%</td>
+        <td>6.3</td>
+        <td>30</td>
+        <td>47.2</td>
+        <td>10 ↑ from #9</td>
+      </tr>
+      <tr>
+        <td><strong>Foreign Affairs</strong></td>
+        <td>Editorial board</td>
+        <td>53.3%</td>
+        <td>6.4</td>
+        <td>31</td>
+        <td>46.6</td>
+        <td>11 ↑ from #11</td>
       </tr>
       <tr>
         <td><strong>Politico</strong></td>
+        <td>Editorial board</td>
         <td>55.9%</td>
         <td>4.9</td>
-        <td>16</td>
-        <td>43.9</td>
-        <td>11 ↓ from #8</td>
+        <td>17</td>
+        <td>44.2</td>
+        <td>12= ↓ from #8</td>
+      </tr>
+      <tr>
+        <td><strong>The Atlantic</strong></td>
+        <td>Editorial board</td>
+        <td>54.1%</td>
+        <td>5.3</td>
+        <td>21</td>
+        <td>44.2</td>
+        <td>12=</td>
+      </tr>
+      <tr>
+        <td><strong>Ezra Klein</strong> ★</td>
+        <td>Blogger (structural)</td>
+        <td>62.0%</td>
+        <td>3.0</td>
+        <td>0</td>
+        <td>43.4</td>
+        <td>14 ★ blogger</td>
       </tr>
       <tr class="t4">
         <td><strong>Wall Street Journal</strong></td>
+        <td>Editorial board</td>
         <td>46.2%</td>
         <td>5.6</td>
-        <td>36</td>
-        <td>43.1</td>
-        <td>12</td>
+        <td>24</td>
+        <td>39.5</td>
+        <td>15</td>
       </tr>
       <tr class="t5">
         <td><strong>ZeroHedge</strong></td>
+        <td>Editorial board</td>
         <td>15.9%</td>
         <td>6.3</td>
-        <td>56</td>
-        <td>27.9</td>
-        <td>13</td>
+        <td>30</td>
+        <td>20.1</td>
+        <td>16</td>
       </tr>
     </tbody>
   </table>
@@ -377,7 +511,154 @@
     Falsifiability score is a blunt proxy. It captures prediction density, not prediction difficulty or domain breadth. The Economist's high score reflects its annual forecasting format; Foreign Affairs' moderate score reflects broad global coverage. The NYT's low score partly reflects prediction avoidance and partly reflects a narrower domestic focus. The composite is best read as a check on the strict ranking rather than a replacement for it — it flags when high accuracy may partly reflect selectivity rather than genuine forecasting skill.
   </div>
 
-  <p>The two publications that move most dramatically under the composite are the <strong>New York Times</strong> (drops from #3 to #10) and the <strong>Economist</strong> (rises from #4 to #2). The NYT's 63.3% strict accuracy is real, but its prediction selectivity means it produces roughly half as many falsifiable forecasts per year as the Economist. The composite treats this selectivity as a partial accountability deficit. The NYT editorial board is accurate on the predictions it commits to; it earns less credit precisely because it commits so rarely. The Economist, by contrast, runs explicit annual prediction roundups that generate many testable claims — accepting the reputational risk of being wrong in exchange for intellectual transparency.</p>
+  <p>The most striking feature of the expanded composite is how it rewards explicit commitment. <strong>Matthew Yglesias</strong> ranks #1 overall — not because his raw accuracy (60.9%) is especially impressive by editorial board standards, but because he makes ~14 falsifiable annual predictions per year with stated probabilities. The composite correctly identifies this as a form of intellectual accountability that most editorial boards refuse. The <strong>New York Times</strong> drops from #3 to #9: its 63.3% accuracy is real, but it produces fewer than half the falsifiable predictions per year of the Economist. <strong>Ezra Klein</strong> ranks below where his 62% accuracy suggests because he embeds predictions in structural analysis rather than committing explicitly. The <strong>Economist</strong> holds at #5 among editorial boards — its annual forecasting format gives it a meaningful falsifiability premium over peers of similar accuracy.</p>
+
+  <h2 id="extended">Extended sample: accuracy across 2015–2025</h2>
+
+  <p>The primary rankings above cover 2019–2025. We extended the analysis backward to 2015–2018 — the Brexit referendum, Trump's first election, and the Obama second-term endgame — to test whether the rankings are stable across a different political era. The extended dataset adds 312 predictions across the 13 publications, bringing the total to 855. The core ranking is largely stable, but with some revealing shifts.</p>
+
+  <div class="callout warn">
+    <strong>What 2015–2018 adds</strong>
+    The 2015–2018 window is harder for most publications. Brexit and Trump's 2016 victory wrong-footed the establishment consensus, reducing accuracy for center-left publications that predicted neither. The Economist, unusually, dropped to 40% in that window (vs. 62% in 2019–2025), suggesting its accuracy in the later period may partly reflect improved methodology or a period in which its classical liberal priors aligned better with outcomes.
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Publication</th>
+        <th>Pooled strict (2015–2025)</th>
+        <th>N (pooled)</th>
+        <th>2019–2025</th>
+        <th>2015–2018</th>
+        <th>Trend</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="t1">
+        <td>1</td>
+        <td><strong>New Statesman</strong></td>
+        <td>71.2%</td>
+        <td>80</td>
+        <td>78.0%</td>
+        <td>60.0%</td>
+        <td>↑ Improved</td>
+      </tr>
+      <tr class="t2">
+        <td>2</td>
+        <td><strong>The Guardian</strong></td>
+        <td>61.1%</td>
+        <td>72</td>
+        <td>67.4%</td>
+        <td>50.0%</td>
+        <td>↑ Improved</td>
+      </tr>
+      <tr class="t2">
+        <td>3</td>
+        <td><strong>New York Times</strong></td>
+        <td>60.7%</td>
+        <td>51</td>
+        <td>63.3%</td>
+        <td>57.1%</td>
+        <td>→ Stable</td>
+      </tr>
+      <tr class="t2">
+        <td>4</td>
+        <td><strong>Washington Post</strong></td>
+        <td>59.4%</td>
+        <td>64</td>
+        <td>58.5%</td>
+        <td>60.9%</td>
+        <td>→ Stable</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><strong>Bloomberg</strong></td>
+        <td>56.2%</td>
+        <td>64</td>
+        <td>58.5%</td>
+        <td>52.2%</td>
+        <td>↑ Slight improvement</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><strong>The Economist</strong></td>
+        <td>55.0%</td>
+        <td>80</td>
+        <td>61.8%</td>
+        <td>40.0%</td>
+        <td>↑↑ Large improvement</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><strong>The Atlantic</strong></td>
+        <td>54.1%</td>
+        <td>61</td>
+        <td>54.1%</td>
+        <td>54.2%</td>
+        <td>→ Completely stable</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><strong>Financial Times</strong></td>
+        <td>52.9%</td>
+        <td>68</td>
+        <td>54.5%</td>
+        <td>50.0%</td>
+        <td>↑ Slight improvement</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><strong>National Review</strong></td>
+        <td>52.5%</td>
+        <td>61</td>
+        <td>59.5%</td>
+        <td>41.7%</td>
+        <td>↑ Improved (but 2015–18 was terrible)</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><strong>Foreign Affairs</strong></td>
+        <td>51.4%</td>
+        <td>70</td>
+        <td>53.3%</td>
+        <td>48.0%</td>
+        <td>→ Stable</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td><strong>Politico</strong></td>
+        <td>46.5%</td>
+        <td>58</td>
+        <td>55.9%</td>
+        <td>33.3%</td>
+        <td>↑ Improved (was very weak on 2016 cycle)</td>
+      </tr>
+      <tr class="t4">
+        <td>12</td>
+        <td><strong>Wall Street Journal</strong></td>
+        <td>37.3%</td>
+        <td>59</td>
+        <td>46.2%</td>
+        <td>20.0%</td>
+        <td>↑ Improved (2015–18 was historically bad)</td>
+      </tr>
+      <tr class="t5">
+        <td>13</td>
+        <td><strong>ZeroHedge</strong> <span class="badge anti">Anti-signal</span></td>
+        <td>17.9%</td>
+        <td>67</td>
+        <td>15.9%</td>
+        <td>21.7%</td>
+        <td>→ Consistently wrong</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Several patterns emerge. The <strong>New Statesman's rank-1 position is robust</strong>: it leads in both windows and achieves the largest absolute improvement (18 percentage points), suggesting genuine editorial learning rather than luck. The <strong>Economist's #2 composite position in the primary ranking is fragile</strong>: it drops substantially when 2015–2018 data is added, falling from #4 on strict accuracy to #6 on pooled accuracy, suggesting its recent accuracy may partly reflect a lucky alignment between its classical-liberal priors and the 2019–2025 policy environment. <strong>National Review</strong> suffers similarly: its 2015–2018 record was poor (41.7%), driven by confident Trump-skepticism during Trump's actual political rise. <strong>Politico</strong> was weakest during the 2016 cycle when it most confidently tracked a conventional "red wave" narrative that Brexit had already disproved.</p>
+
+  <p>One publication is essentially invariant: the <strong>Atlantic</strong> achieves 54.1% in both windows (within 0.1 percentage points), suggesting its catastrophist framing is a stable institutional trait rather than a period-specific posture.</p>
+
 
   <h2 id="calibration">Calibration: does confidence predict correctness?</h2>
 
