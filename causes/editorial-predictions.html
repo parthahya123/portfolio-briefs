@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Who Gets the Future Right? Editorial Board Prediction Accuracy, 2019–2026</title>
+<title>Who Gets the Future Right? Editorial Board Prediction Accuracy, 2019–2025</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root { --accent: #1e3a5f; --text: #1a1a1a; --muted: #555; --border: #e0e4ea; --bg: #f8f9fb; --surface: #fff; --surface-alt: #f3f5f8; }
@@ -37,22 +37,25 @@
   th { text-align: left; padding: .45rem .6rem; background: var(--surface-alt); border-bottom: 2px solid var(--border); color: #444; font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; }
   td { padding: .4rem .6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
   tr:last-child td { border-bottom: none; }
-  .rank-1 { background: #f0fdf4; }
-  .rank-2 { background: #f7fdf9; }
-  .rank-last { background: #fff5f5; }
+  .t1 { background: #f0fdf4; }
+  .t2 { background: #f7fdf9; }
+  .t4 { background: #fff8ed; }
+  .t5 { background: #fff2f2; }
   .badge { display: inline-block; font-family: system-ui, sans-serif; font-size: 11px; font-weight: 600; padding: .15em .5em; border-radius: 2px; text-transform: uppercase; letter-spacing: .05em; }
   .badge.correct { background: #dcfce7; color: #166534; }
   .badge.partial { background: #fef9c3; color: #854d0e; }
   .badge.wrong { background: #fee2e2; color: #991b1b; }
-  .badge.shame { background: #1e3a5f; color: #fff; }
+  .badge.anti { background: #1e3a5f; color: #fff; }
   .verdict { background: #0f0f0f; color: #f5f5f5; padding: 1.8rem 2rem; margin: 2.5rem 0; border-radius: 2px; }
   .verdict strong { color: #fff; }
   .verdict .vhead { font-family: system-ui, sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: #aaa; margin-bottom: .7rem; }
-  .pub-block { border: 1px solid var(--border); padding: 1.5rem 1.75rem; margin: 2rem 0; background: var(--surface); }
-  .pub-block h3 { margin-top: 0; margin-bottom: .5rem; font-size: 1.1rem; }
+  .pub-block { border: 1px solid var(--border); padding: 1.5rem 1.75rem; margin: 1.75rem 0; background: var(--surface); }
+  .pub-block h3 { margin-top: 0; margin-bottom: .35rem; font-size: 1.1rem; }
   .pub-meta { font-family: system-ui, sans-serif; font-size: 12px; color: #888; margin-bottom: 1rem; }
-  .pub-score { font-family: system-ui, sans-serif; font-size: 22px; font-weight: 700; color: var(--accent); display: inline-block; margin-right: .5rem; }
-  .pub-score-label { font-family: system-ui, sans-serif; font-size: 12px; color: #888; }
+  .fame-block { border-left: 3px solid #166534; padding: .8rem 1.2rem; margin: 1.5rem 0; background: #f0fdf4; }
+  .fame-block h3 { margin-top: 0; color: #166534; font-size: 1rem; margin-bottom: .4rem; }
+  .shame-block { border-left: 3px solid #991b1b; padding: .8rem 1.2rem; margin: 1.5rem 0; background: #fff5f5; }
+  .shame-block h3 { margin-top: 0; color: #991b1b; font-size: 1rem; margin-bottom: .4rem; }
 </style>
 </head>
 <body>
@@ -65,414 +68,446 @@
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#methodology">Methodology</a></li>
     <li><a href="#ranking">The ranking</a></li>
+    <li><a href="#calibration">Calibration</a></li>
     <li><a href="#domain-breakdown">By domain</a></li>
     <li><a href="#publication-profiles">Publication profiles</a></li>
     <li><a href="#hall-of-fame">Hall of fame</a></li>
     <li><a href="#hall-of-shame">Hall of shame</a></li>
-    <li><a href="#systematic-biases">Systematic biases</a></li>
-    <li><a href="#meta-findings">Meta-findings</a></li>
+    <li><a href="#biases">Systematic biases</a></li>
+    <li><a href="#information-diet">Information diet</a></li>
+    <li><a href="#meta">What this tells us</a></li>
   </ul>
 </nav>
 
 <main>
   <div class="eyebrow">Media Analysis</div>
   <h1>Who Gets the Future Right?</h1>
-  <div class="dek">A systematic accuracy audit of editorial board predictions across 13 major publications, 2019–2026. Forty research runs. 1,052 verifiable predictions.</div>
-  <div class="meta">October 2026 &nbsp;·&nbsp; AI-assisted research using deep search across archives</div>
+  <div class="dek">A systematic accuracy audit of editorial board predictions across 13 major publications, 2019–2025. Forty research runs. 543 verifiable predictions scored against outcomes.</div>
+  <div class="meta">October 2026 &nbsp;·&nbsp; AI-assisted research using deep search across publication archives</div>
 
-  <p>Editorial boards occupy an unusual position in the information ecosystem. They claim to offer not just opinion but informed foresight — the house view of major institutions staffed by experienced journalists and analysts who study politics, economics, and foreign affairs full time. But how accurate are those forecasts? Do the publications that command the highest subscriptions and shape elite discourse actually understand the future better than a base-rate guess?</p>
+  <p>Editorial boards occupy an unusual position in the information ecosystem. They claim to offer not just opinion but informed foresight — the institutional view of publications staffed by experienced journalists and analysts who follow politics, economics, and foreign affairs professionally. But how accurate are those forecasts? Are the publications that command the highest prestige and shape elite discourse actually better at predicting the future than a base-rate guess?</p>
 
-  <p>This analysis attempts to answer that question systematically. Over 40 research iterations, we extracted verifiable predictions from the editorial boards of 13 major publications across the political spectrum — from the New York Times to ZeroHedge, the Guardian to the Wall Street Journal. We scored each prediction against what actually happened, using two standards: strict accuracy (fully correct) and generous accuracy (correct or partially correct). We then looked for patterns in where each outlet succeeds, where it fails, and whether any systematic distortions are visible.</p>
+  <p>This analysis attempts to answer that question systematically. Over forty research iterations, we extracted verifiable predictions from the editorial boards of thirteen major publications — the New York Times, Guardian, Wall Street Journal, Economist, Financial Times, Bloomberg, Washington Post, The Atlantic, Foreign Affairs, National Review, New Statesman, Politico, and ZeroHedge. We scored each prediction against what actually happened through October 2026, using a strict standard (fully correct) and a generous standard (correct or partially correct). We then looked for systematic patterns in where each outlet succeeds, where it fails, and whether any durable biases are visible across time.</p>
 
-  <p>The results are instructive — and occasionally surprising.</p>
+  <p>The results are more varied — and more instructive — than you might expect.</p>
 
   <h2 id="methodology">How we defined a prediction</h2>
 
-  <p>Not every editorial opinion counts as a prediction. To be included, a claim had to meet four criteria. First, it had to be falsifiable: a specific outcome that could, in principle, be verified as having happened or not happened. Second, it had to be bounded: something with a natural resolution date before October 2026. Third, it had to be board-attributed, not just a columnist or a quoted source. Fourth, it had to be about the world, not just about what the board thought ought to happen.</p>
+  <p>Not every editorial opinion counts as a prediction. To be included, a claim had to meet four criteria. First, it had to be falsifiable: a specific outcome that could in principle be verified as having happened or not. Second, it had to be bounded: something with a natural resolution date before October 2026. Third, it had to be board-attributed — the institutional editorial position, not a columnist or quoted source. Fourth, it had to be about the world, not about what the board thought ought to happen.</p>
 
-  <p>This excluded a large share of editorial content. Normative arguments ("the Senate should pass this bill"), process claims ("Congress must act"), and rhetorical framing ("this is a crisis") do not count. Vague continuations ("inequality will remain a challenge") do not count. Only claims that, if you read them in 2020 or 2022, would allow a future reader to say definitively "right" or "wrong."</p>
+  <p>This excluded a large share of editorial content. Normative arguments ("Congress should act"), process claims ("we need reform"), rhetorical questions, and vague continuations ("challenges will persist") do not count. Only claims where a future reader could say, definitively, "right" or "wrong."</p>
 
-  <p>We applied two scoring standards. <strong>Strict accuracy</strong> requires the prediction to have been fully correct — right on direction, roughly right on magnitude, right on timing if a timeline was specified. <strong>Generous accuracy</strong> gives half-credit for predictions that were directionally correct but wrong on magnitude, or partially vindicated. A prediction that "the UK economy will suffer severely from Brexit" is strict-correct given OBR's 4–6% GDP hit estimates. A prediction that the EU would impose WTO-level tariffs on Brexit day, which didn't happen, is strict-wrong but might be generous-partial if some trade barriers did emerge.</p>
+  <p>We applied two scoring standards. <strong>Strict accuracy</strong> requires the prediction to have been fully correct — right on direction, roughly right on magnitude, right on timing if specified. <strong>Generous accuracy</strong> gives half-credit for directionally correct but magnitude-wrong predictions. Both are reported; strict accuracy is the primary metric.</p>
 
-  <p>We extracted predictions using a systematic chronological protocol — not topic-searching, which would produce cherry-picked results, but walking forward through archives in defined time windows. Each publication received two runs: an early window (2019–2021) and a recent window (2022–2025), then combined with original runs for a pooled total.</p>
+  <p>Predictions were extracted using a systematic chronological protocol — not topic-searching, which produces cherry-picked samples, but walking forward through archives in defined time windows. Each publication received two runs: an Early window (2019–2021) and a Recent window (2022–2025). Publications that run explicit annual prediction features (the Economist's "The World Ahead," FT's year-ahead specials) had those incorporated. N ranges from 30 (NYT, which rarely makes falsifiable commitments) to 55 (Economist).</p>
 
   <h2 id="ranking">The definitive ranking</h2>
 
-  <p>Across 1,052 verifiable predictions, the variation in accuracy is substantial. The Guardian leads at 71% strict accuracy; ZeroHedge trails at 17%. The median is around 40% — meaning the typical editorial board gets less than half its specific falsifiable predictions exactly right.</p>
+  <p>Across 543 verifiable predictions, the range of accuracy is wide. The New Statesman leads at 78% strict accuracy; ZeroHedge trails at 16%. The median publication sits at around 57% — meaning the typical editorial board gets slightly more than half its specific falsifiable predictions exactly right.</p>
 
   <table>
     <thead>
       <tr>
         <th>#</th>
         <th>Publication</th>
-        <th>Strict %</th>
-        <th>Generous %</th>
+        <th>Strict</th>
+        <th>Generous</th>
         <th>N</th>
+        <th>Tier</th>
         <th>Lean</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="rank-1">
+      <tr class="t1">
         <td>1</td>
-        <td><strong>The Guardian</strong></td>
-        <td>71%</td>
-        <td>82%</td>
-        <td>119</td>
-        <td>Centre-left (UK)</td>
-      </tr>
-      <tr class="rank-2">
-        <td>2</td>
         <td><strong>New Statesman</strong></td>
-        <td>67%</td>
-        <td>81%</td>
-        <td>63</td>
+        <td>78.0%</td>
+        <td>86.0%</td>
+        <td>50</td>
+        <td>1 — Genuinely predictive</td>
         <td>Centre-left (UK)</td>
       </tr>
-      <tr>
+      <tr class="t2">
+        <td>2</td>
+        <td><strong>The Guardian</strong></td>
+        <td>67.4%</td>
+        <td>79.3%</td>
+        <td>46</td>
+        <td>2 — Above average</td>
+        <td>Centre-left (UK)</td>
+      </tr>
+      <tr class="t2">
         <td>3</td>
-        <td><strong>Financial Times</strong></td>
-        <td>46%</td>
-        <td>64%</td>
-        <td>78</td>
-        <td>Centrist / liberal market</td>
-      </tr>
-      <tr>
-        <td>4</td>
         <td><strong>New York Times</strong></td>
-        <td>42%</td>
-        <td>66%</td>
-        <td>90</td>
+        <td>63.3%</td>
+        <td>76.7%</td>
+        <td>30</td>
+        <td>2 — Above average</td>
         <td>Centre-left (US)</td>
       </tr>
-      <tr>
-        <td>5</td>
-        <td><strong>The Atlantic</strong></td>
-        <td>42%</td>
-        <td>62%</td>
-        <td>60</td>
-        <td>Centre-left (US)</td>
-      </tr>
-      <tr>
-        <td>6</td>
+      <tr class="t2">
+        <td>4</td>
         <td><strong>The Economist</strong></td>
-        <td>40%</td>
-        <td>64%</td>
-        <td>95</td>
+        <td>61.8%</td>
+        <td>70.9%</td>
+        <td>55</td>
+        <td>2 — Above average</td>
         <td>Classical liberal</td>
       </tr>
       <tr>
-        <td>7</td>
+        <td>5</td>
         <td><strong>National Review</strong></td>
-        <td>40%</td>
-        <td>62%</td>
-        <td>53</td>
+        <td>59.5%</td>
+        <td>70.3%</td>
+        <td>37</td>
+        <td>3 — Average</td>
         <td>Conservative (US)</td>
       </tr>
       <tr>
-        <td>8</td>
+        <td>6=</td>
         <td><strong>Washington Post</strong></td>
-        <td>38%</td>
-        <td>62%</td>
-        <td>95</td>
+        <td>58.5%</td>
+        <td>65.9%</td>
+        <td>41</td>
+        <td>3 — Average</td>
         <td>Centre-left (US)</td>
       </tr>
       <tr>
-        <td>9</td>
+        <td>6=</td>
         <td><strong>Bloomberg</strong></td>
-        <td>38%</td>
-        <td>60%</td>
-        <td>130</td>
+        <td>58.5%</td>
+        <td>65.9%</td>
+        <td>41</td>
+        <td>3 — Average</td>
         <td>Centrist / markets</td>
       </tr>
       <tr>
-        <td>10</td>
+        <td>8</td>
         <td><strong>Politico</strong></td>
-        <td>37%</td>
-        <td>60%</td>
-        <td>52</td>
+        <td>55.9%</td>
+        <td>70.6%</td>
+        <td>34</td>
+        <td>3 — Average</td>
         <td>DC establishment</td>
       </tr>
       <tr>
-        <td>11</td>
-        <td><strong>Wall Street Journal</strong></td>
-        <td>30%</td>
-        <td>59%</td>
-        <td>81</td>
-        <td>Conservative / market</td>
+        <td>9</td>
+        <td><strong>Financial Times</strong></td>
+        <td>54.5%</td>
+        <td>68.2%</td>
+        <td>44</td>
+        <td>3 — Average</td>
+        <td>Centrist / market-liberal</td>
       </tr>
       <tr>
-        <td>12</td>
-        <td><strong>Foreign Affairs</strong></td>
-        <td>29%</td>
-        <td>54%</td>
-        <td>112</td>
-        <td>Institutionalist / foreign policy</td>
+        <td>10</td>
+        <td><strong>The Atlantic</strong></td>
+        <td>54.1%</td>
+        <td>66.2%</td>
+        <td>37</td>
+        <td>3 — Average</td>
+        <td>Centre-left (US)</td>
       </tr>
-      <tr class="rank-last">
+      <tr>
+        <td>11</td>
+        <td><strong>Foreign Affairs</strong></td>
+        <td>53.3%</td>
+        <td>66.7%</td>
+        <td>45</td>
+        <td>3 — Average</td>
+        <td>Foreign policy establishment</td>
+      </tr>
+      <tr class="t4">
+        <td>12</td>
+        <td><strong>Wall Street Journal</strong></td>
+        <td>46.2%</td>
+        <td>60.3%</td>
+        <td>39</td>
+        <td>4 — Below average</td>
+        <td>Conservative / market (US)</td>
+      </tr>
+      <tr class="t5">
         <td>13</td>
-        <td><strong>ZeroHedge</strong></td>
-        <td>17%</td>
-        <td>39%</td>
-        <td>84</td>
+        <td><strong>ZeroHedge</strong> <span class="badge anti">Anti-signal</span></td>
+        <td>15.9%</td>
+        <td>33.0%</td>
+        <td>44</td>
+        <td>5 — Anti-informative</td>
         <td>Hard right / financial doom</td>
       </tr>
     </tbody>
   </table>
 
   <div class="callout">
-    <strong>Key finding</strong>
-    The gap between the Guardian (71%) and the median (40%) is larger than the gap between the median and ZeroHedge. Most publications cluster in the 37–46% range. Excellence and failure are both outliers.
+    <strong>The headline finding</strong>
+    Editorial prediction accuracy is overwhelmingly determined by three factors: (1) whether the publication's ideological priors happen to align with the direction of reality during the sample period; (2) how much the publication hedges versus commits; and (3) whether the publication generates independent analysis or tracks elite consensus. No publication consistently transcends its worldview.
   </div>
+
+  <p>The tiers reflect meaningful breaks. Only the New Statesman clears 70% strict accuracy — its 78% over 50 predictions, with only two fully incorrect calls in seven years, represents a genuinely unusual editorial forecasting record. Publications in Tier 3 (54–60%) are marginally better than a coin flip on strict accuracy, though their generous accuracy suggests they usually get the direction right even when the specifics are wrong. The WSJ at 46% is wrong more often than it is right. ZeroHedge at 16% is anti-informative: inverting its predictions would yield approximately 84% accuracy, better than any mainstream publication achieves normally.</p>
+
+  <h2 id="calibration">Calibration: does confidence predict correctness?</h2>
+
+  <p>Well-calibrated sources are more accurate on confident predictions than on hedged ones. This is the basic test of whether confidence language carries information. A publication that says "will" for things as uncertain as things it says "probably" is miscalibrated, regardless of overall accuracy.</p>
+
+  <p>The best-calibrated publication in the sample is the <strong>Washington Post in its Early window (2019–2021)</strong>: CONFIDENT predictions hit 90% accuracy; MODERATE hit 62.5%. This textbook descending pattern was achieved through an intelligent asymmetric strategy: confident language was reserved almost exclusively for warnings about adversary behavior (North Korea won't denuclearize, Taliban will take Afghanistan, election lies will lead to violence), while positive predictions about institutional resilience were hedged. Confident on what bad actors will do; cautious on what good institutions will achieve.</p>
+
+  <p>The worst-calibrated: <strong>ZeroHedge</strong>, whose CONFIDENT predictions achieved 5.9% accuracy in the Recent window. This is anti-calibration — the publication uses the most forceful language ("inevitable," "guaranteed," "only a matter of time") for the claims it is most consistently wrong about. <strong>Politico</strong> shows inverted calibration in the Recent window: HEDGED predictions (50% accuracy) beat CONFIDENT ones (25%). This is actually interpretable — Politico's "Toss Up" designations were accurate; its confident structural calls about a "red wave" were not.</p>
+
+  <p>A striking meta-finding: the same publication can be well-calibrated in one period and poorly calibrated in the next. National Review went from 83% CONFIDENT accuracy (Early) to 47% (Recent). This suggests calibration is not a stable institutional trait but reflects whether the publication's priors happen to match reality in a given period. When consensus is right, consensus-trackers appear calibrated. When it breaks down, they appear inverted.</p>
 
   <h2 id="domain-breakdown">Performance by domain</h2>
 
-  <p>Aggregate accuracy numbers obscure important variation across topic areas. The pattern that emerges is consistent: publications perform best on domestic politics and economics within their home geography, and worst on international events — particularly ones that involve discontinuous change (wars, collapses, elections in other countries).</p>
+  <p>Aggregate accuracy numbers obscure the most important finding: every publication predicts best in its home domain. UK-based outlets dramatically outperform US outlets on UK predictions. Economic publications outperform political publications on economics. The ranking should be read as measuring each publication's weighted performance across its typical coverage mix — not its quality at predicting any arbitrary question.</p>
 
   <table>
     <thead>
       <tr>
         <th>Domain</th>
-        <th>Best performer</th>
-        <th>Worst performer</th>
-        <th>Notes</th>
+        <th>Best performer(s)</th>
+        <th>Key finding</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>UK politics / Brexit</strong></td>
-        <td>Guardian, New Statesman, FT</td>
-        <td>Foreign Affairs, WSJ</td>
-        <td>UK-based outlets had home advantage; Brexit economic damage widely validated</td>
+        <td><strong>UK domestic politics</strong></td>
+        <td>New Statesman (92.3%), Guardian</td>
+        <td>NS predicted Conservative collapse, Truss failure, and Labour's fragility before they materialized</td>
       </tr>
       <tr>
         <td><strong>US domestic politics</strong></td>
-        <td>WaPo, NYT</td>
-        <td>WSJ</td>
-        <td>WaPo prescient on democratic backsliding mechanism; WSJ badly wrong on TCJA self-funding</td>
+        <td>NYT (100% Recent), WaPo Early</td>
+        <td>WaPo's structural-realism approach (incentives over rhetoric) worked well on authoritarian behavior</td>
       </tr>
       <tr>
-        <td><strong>US economics / markets</strong></td>
-        <td>WSJ (inflation), National Review</td>
-        <td>Bloomberg, FT</td>
-        <td>Bloomberg's Feb 2022 inflation call was its worst; WSJ correctly called Biden stimulus inflation</td>
+        <td><strong>Economics / inflation</strong></td>
+        <td>WSJ (inflation call early), Economist</td>
+        <td>WSJ got 2021 inflation right; WaPo got it wrong ("don't freak out," May 2021). All publications over-predict economic severity</td>
       </tr>
       <tr>
-        <td><strong>Ukraine / Russia</strong></td>
-        <td>WaPo, Economist</td>
-        <td>Foreign Affairs, WSJ</td>
-        <td>Near-universal miss on 2022 full-scale invasion scale; "Ukraine can win" predictions proved wrong</td>
+        <td><strong>Geopolitics / conflict</strong></td>
+        <td>WaPo Early, Foreign Affairs (structural trends)</td>
+        <td>Publications that ask "what are the incentives?" outperform those that track diplomatic signals</td>
       </tr>
       <tr>
-        <td><strong>Middle East</strong></td>
-        <td>FT, NYT</td>
-        <td>Foreign Affairs</td>
-        <td>Foreign Affairs published "quieter than in decades" 8 days before October 7, 2023</td>
-      </tr>
-      <tr>
-        <td><strong>China / geopolitics</strong></td>
-        <td>Bloomberg, Economist</td>
-        <td>Foreign Affairs</td>
-        <td>China slowdown widely predicted correctly; Taiwan war risk overstated across the board</td>
-      </tr>
-      <tr>
-        <td><strong>Climate / energy</strong></td>
-        <td>Guardian, WaPo</td>
-        <td>WSJ, National Review</td>
-        <td>Guardian's climate severity predictions mostly vindicated; WSJ systematically wrong on regulation</td>
+        <td><strong>Democracy / institutions</strong></td>
+        <td>NYT, WaPo</td>
+        <td>Correct on democratic erosion mechanism; overstated catastrophism. Atlantic scored 16.7% on democracy in Recent window</td>
       </tr>
       <tr>
         <td><strong>Financial markets</strong></td>
         <td>Bloomberg, Economist</td>
-        <td>ZeroHedge, FT</td>
-        <td>ZeroHedge wrong on equities 5 of 6 years; FT predicted S&P crash in a year it rose 25%</td>
+        <td>ZeroHedge wrong on equities 5 of 6 years; FT predicted S&amp;P crash in a year it returned +25%</td>
       </tr>
     </tbody>
   </table>
 
+  <p>The economics domain produced the most striking finding: nearly every publication systematically overstates economic severity. Center-left publications predict deeper recessions than materialize; center-right publications predict greater costs from government programs than occur. The practical implication: apply a 30–50% discount to the magnitude (not direction) of economic predictions from any publication in this sample.</p>
+
   <h2 id="publication-profiles">Publication profiles</h2>
 
-  <p>What distinguishes the top performers from the bottom is not ideology — the ranking includes left and right outlets at both ends. What distinguishes them is epistemic discipline: whether the board is willing to make specific claims that can be falsified, whether its predictions reflect genuine reasoning from evidence or are primarily expressive of the outlet's political priors, and whether it corrects when wrong.</p>
-
   <div class="pub-block">
-    <h3>1. The Guardian &nbsp;<span class="badge correct">71% strict</span></h3>
-    <div class="pub-meta">Centre-left British newspaper · N=119 · Covers UK politics, Europe, climate, US affairs</div>
-    <p>The Guardian's editorial board has made its name on a relatively narrow range of high-confidence domestic predictions — and those predictions have largely proved correct. Its calls on Brexit economics were vindicated in every major dimension: trade fell, GDP was damaged, investment declined, and the distributional effects fell hardest on the regions promised the most benefit. Its predictions about Conservative Party instability — Boris Johnson unsustainable, the Truss mini-budget as economic self-harm, the eventual catastrophic defeat in 2024 — were all correct.</p>
-    <p>The Guardian's single most prescient long-term call was on NHS austerity: that Conservative spending cuts would produce a healthcare crisis within a decade. Today, with 7.28 million people on waiting lists, 30,000 excess deaths linked to cuts (BMJ), and a repair backlog exceeding £10 billion, that prediction reads as almost perfectly accurate.</p>
-    <p>Where it stumbles is in in-group optimism. The Guardian's forecast that Keir Starmer's Labour government would deliver a "new progressive settlement" was spectacularly wrong — Starmer's approval fell to the lowest of any PM in 50 years, and he resigned in June 2026. The Guardian's track record on predicting the performance of center-left governments it favors is notably weaker than its record on criticizing Conservative governance.</p>
+    <h3>New Statesman &nbsp;<span class="badge correct">78.0% strict</span> &nbsp;Tier 1</h3>
+    <div class="pub-meta">Centre-left British weekly · N=50 · UK politics, economics, social policy · Only 2 fully incorrect predictions in 7 years</div>
+    <p>The New Statesman is the standout performer in this dataset — not just the most accurate but the most interesting case study in what good editorial forecasting looks like. Its record on UK domestic politics (92.3% strict in 2022–2025) reflects genuine institutional expertise: a century of accumulated analytical frameworks about British political dynamics, combined with a willingness to make specific falsifiable claims in advance of events.</p>
+    <p>Its two best predictions were also its boldest. Before Liz Truss took office, it called her "temperamentally ill-suited to these times" — she lasted 49 days. Immediately after Labour's 411-seat landslide, it called the new government "a magnificent house of cards" — Starmer's approval collapsed to -46% within 18 months, and he resigned as PM in June 2026. Both required going against the prevailing narrative at the moment of prediction.</p>
+    <p>Its single genuine miss was economic: it endorsed the Bank of England's worst-case scenario of "the longest recession for a century" — the actual recession was the shallowest in modern history. This reveals the NS's persistent pessimism bias when predicting economic magnitude, the same bias that afflicts nearly every center-left publication. Directional calls are strong; magnitude calls require discounting.</p>
   </div>
 
   <div class="pub-block">
-    <h3>2. New Statesman &nbsp;<span class="badge correct">67% strict</span></h3>
-    <div class="pub-meta">Centre-left British magazine · N=63 · UK politics, economics, social policy</div>
-    <p>The New Statesman performed strongly for the same reason as the Guardian — its home domain predictions on UK politics were well-grounded in structural analysis rather than wishful thinking. Its skepticism about Conservative economic policy has been consistently vindicated. Its calls on the fragility of the Johnson coalition, the inevitable collapse of post-Brexit trade optimism, and the underlying weakness of UK growth prospects were all correct.</p>
-    <p>Like the Guardian, the New Statesman struggles with "in-opposition mode" error: it systematically overestimates how effectively center-left alternatives would perform if given power. Its predictions about how quickly Starmer could reverse Conservative economic damage reflected hope rather than evidence-based assessment of institutional inertia.</p>
-    <p>Its 81% generous accuracy — substantially above its strict rate — reflects that the New Statesman is directionally right more often than it is precisely right. It often identifies correct trends but overstates the speed or magnitude of change.</p>
+    <h3>The Guardian &nbsp;<span class="badge correct">67.4% strict</span> &nbsp;Tier 2</h3>
+    <div class="pub-meta">Centre-left British daily · N=46 · UK politics, Brexit, climate, US affairs</div>
+    <p>The Guardian's record reflects the same home-geography advantage as the New Statesman: its Brexit economic damage predictions were vindicated in every major dimension (trade fell, GDP was damaged, investment declined), its calls on Conservative instability proved correct across multiple leaders, and its austerity-NHS warnings — perhaps the board's most important long-horizon prediction — have been more than confirmed. Today, NHS waiting lists exceed 7.28 million pathways, and BMJ researchers attribute 30,000 excess deaths to the 2015 spending cuts alone.</p>
+    <p>Like the NS, the Guardian's calibration fails when its preferred party is in power. Its prediction that Starmer's government would deliver a "new progressive settlement" was badly wrong. The in-group optimism pattern — accurate about Conservative dysfunction, wrong about center-left government performance — is the most consistent editorial failure mode across British publications.</p>
   </div>
 
   <div class="pub-block">
-    <h3>3. Financial Times &nbsp;<span class="badge partial">46% strict</span></h3>
-    <div class="pub-meta">Centrist, market-liberal · N=78 · Economics, global finance, UK/European politics</div>
-    <p>The FT occupies a frustrating middle position in this ranking. Its editorial judgment is often sound, but its calibration is surprisingly poor — its hedged, uncertain predictions prove more accurate than its confident ones. This inversion suggests systemic overconfidence when the board has a strong view.</p>
-    <p>The FT's best calls include: Brexit economic damage (fully vindicated), Keir Starmer becoming PM (correct), Von der Leyen's second term (correct), the ANC losing its majority (correct), and Argentina choosing devaluation over dollarization (correct).</p>
-    <p>Its worst calls reveal a specific blind spot: the board struggled whenever US politics deviated from the European centrist expectation. It failed to anticipate Trump's 2024 comeback, predicted an S&P 500 crash in a year the market returned +25%, and in 2025 predicted Bitcoin would hit $200,000 (it peaked at $126,200). The FT also self-characterized its 2025 predictions as its "worst ever" — seven wrong out of twenty.</p>
+    <h3>New York Times &nbsp;<span class="badge correct">63.3% strict</span> &nbsp;Tier 2</h3>
+    <div class="pub-meta">Centre-left American daily · N=30 (smallest sample — board systematically avoids falsifiable claims) · US politics, democracy</div>
+    <p>The NYT's apparent accuracy (63.3%) may partly reflect selection bias: the board makes fewer falsifiable predictions than any other publication in this sample, and may concentrate its commitments in domains where it is more confident. When it does commit, its record on democratic institutions is strong. It correctly predicted that excusing January 6 would embolden future attempts — Trump ran again, won, and pardoned the rioters on his first day in office. It correctly called Biden's candidacy "a reckless gamble" three weeks before he dropped out.</p>
+    <p>Its most notable failure was its most high-profile one: a dual endorsement of Warren and Klobuchar as "best equipped" for the Democratic nomination in January 2020. Neither won a single primary state. The failure revealed the board's disconnection from the primary electorate, particularly Black voters in Southern states who drove Biden's comeback. It is the only dual endorsement in the publication's history — and was vindicated by the elections almost immediately.</p>
+    <p>The board also has a formal self-retraction on record: its 2014 marijuana legalization editorial, which predicted legalization would not lead to greater use or serious harm. Daily cannabis users have since tripled; the board published an explicit correction in February 2026 acknowledging it was wrong. It is the only formal editorial apology in this entire dataset.</p>
   </div>
 
   <div class="pub-block">
-    <h3>4. New York Times &nbsp;<span class="badge partial">42% strict</span></h3>
-    <div class="pub-meta">Centre-left American newspaper · N=90 · US politics, economics, foreign policy</div>
-    <p>The NYT editorial board is more cautious about making falsifiable predictions than most boards in this sample — a hedge that improves its defensibility but also limits its informational value. When it does commit to specific claims, its track record is roughly average.</p>
-    <p>Its best predictions: correctly calling Trump's tariff regime as economically damaging (Wharton estimates $22K lifetime loss per middle-income household), prescient on democratic backsliding through incremental subversion rather than dramatic coup, and correctly calling Biden's 2024 candidacy a "reckless gamble" weeks before he dropped out.</p>
-    <p>Its most notable failure was its 2014 marijuana legalization editorial, which predicted legalization would not lead to greater use or serious harm. Daily cannabis users have since tripled; hospitalizations for marijuana-linked psychotic disorders increased; and the board published a rare explicit retraction in February 2026 acknowledging the editorial was wrong. It is the only major prediction in this sample that resulted in a formal editorial apology.</p>
+    <h3>The Economist &nbsp;<span class="badge correct">61.8% strict</span> &nbsp;Tier 2</h3>
+    <div class="pub-meta">Classical liberal · N=55 (largest sample — publishes explicit annual prediction features) · Global economics, politics, science</div>
+    <p>The Economist's strengths are breadth and balance. It makes more predictions than any other publication here (55 verifiable claims), accepts the reputational risk of being wrong more often, and maintains above-average accuracy despite covering the full range of global events where others specialize. Its annual "World Ahead" features produced highly accurate calls on specific, concrete events — technology milestones, treaty signings, electoral thresholds — while its longer-horizon analytical predictions on geopolitics and economics were more mixed.</p>
+    <p>The Economist is the only publication in this sample whose errors do not cluster strongly in one ideological direction. It is sometimes too optimistic about globalization (predicting trade liberalization that stalled), sometimes too pessimistic about populism (predicting electoral collapses that didn't materialize). This balanced error distribution reflects genuine analytical effort to transcend its classical-liberal priors, even if it doesn't always succeed.</p>
   </div>
 
   <div class="pub-block">
-    <h3>5. The Atlantic &nbsp;<span class="badge partial">42% strict</span></h3>
-    <div class="pub-meta">Centre-left American magazine · N=60 · Culture, politics, democracy</div>
-    <p>The Atlantic's editorial stance centers heavily on democratic institutions, and its predictions in this domain have had a mixed but largely creditable record. It correctly identified the incremental erosion model of democratic backsliding (regulatory capture, inspector general firings, executive order overreach) rather than the dramatic-coup scenario that some forecasters emphasized. V-Dem data showing a 24% decline in the US Liberal Democracy Index in a single year partially vindicates its warnings.</p>
-    <p>Where the Atlantic overreaches is in predicting the pace and irreversibility of institutional damage. Its warnings about institutions being "beyond recovery" proved premature — courts pushed back on multiple actions, midterm dynamics remained uncertain, and democratic adaptation proved more resilient than the board anticipated. The Atlantic systematically overestimates the fragility of democratic institutions in developed democracies, perhaps because the editorial voice requires asserting urgency.</p>
-    <p>Its predictions on confident calls were well-calibrated; the failures concentrated in overstatements of catastrophic scenarios.</p>
+    <h3>National Review &nbsp;<span class="badge correct">59.5% strict</span> &nbsp;Tier 3</h3>
+    <div class="pub-meta">Conservative American magazine · N=37 · US politics, economics, foreign policy</div>
+    <p>National Review's trajectory is one of the most instructive in the dataset: 68.4% strict accuracy in 2019–2021, dropping to 50.0% in 2022–2025. The decline wasn't caused by declining analytical quality — it was caused by the publication's institutional anti-Trump position becoming load-bearing in its predictions. In the Early period, NR's conservative priors (Afghanistan withdrawal will be a disaster, ARP will fuel inflation, Biden's cognition will worsen) aligned well with outcomes. In the Recent period, confident predictions that "Trump will suffer another highly consequential defeat" — made repeatedly across multiple election cycles — were all wrong. Trump won the popular vote by two points.</p>
+    <p>NR's best call in the dataset: "Biden's cognitive decline will worsen" (February 2024), published four months before the catastrophic debate that ended his candidacy. It was ahead of mainstream media on this issue, though the framing was more partisan than analytical.</p>
   </div>
 
   <div class="pub-block">
-    <h3>6. The Economist &nbsp;<span class="badge partial">40% strict</span></h3>
-    <div class="pub-meta">Classical liberal · N=95 · Global economics, politics, science, development</div>
-    <p>The Economist's score of 40% understates its genuine strengths. Its annual "World In" predictions on specific, concrete events — which countries would hold elections, whether specific international agreements would be signed, whether specific economic thresholds would be crossed — proved highly accurate in 2021 and 2022. The board correctly called China's space station completion, the Tokyo Olympics proceeding, the ANC's declining share of the vote, and the global inflation surge.</p>
-    <p>The Economist struggles most with predictions about trajectories rather than discrete events. Its classical-liberal framework predicts that markets and institutions will equilibrate, which generates systematic underestimation of political discontinuities. It consistently expected that trade tensions would de-escalate, that democratic norms would prove self-restoring, and that major geopolitical ruptures would resolve diplomatically — all of which proved too optimistic in the 2022–2025 period.</p>
+    <h3>Washington Post &nbsp;<span class="badge correct">58.5% strict</span> &nbsp;Tier 3</h3>
+    <div class="pub-meta">Centre-left American daily · N=41 · US politics, democracy, foreign policy</div>
+    <p>The WaPo's aggregate score of 58.5% understates its genuine achievements. Its Early-window performance (2019–2021) is the best-calibrated in the entire dataset: CONFIDENT predictions at 90% accuracy, achieved by reserving strong language for authoritarian-behavior predictions rather than institutional-resilience hopes. Its prediction that Trump's election lies would lead to violence, made in September 2020 — three months before January 6 — is the single most consequential correct prediction in this dataset.</p>
+    <p>The Recent window dragged the average down significantly. WaPo's hawkish optimism on Ukraine produced consistent misses: "2023 will be decisive for the war" was wrong when the counteroffensive failed. Its May 2021 "don't freak out about inflation" editorial was followed by inflation peaking at 9.1%. The pattern is consistent: the WaPo is excellent at predicting what adversaries will do; it is prone to optimistic overestimation of what Western-backed outcomes will achieve.</p>
   </div>
 
   <div class="pub-block">
-    <h3>7. National Review &nbsp;<span class="badge partial">40% strict</span></h3>
-    <div class="pub-meta">Conservative American magazine · N=53 · US politics, economics, foreign policy</div>
-    <p>National Review's accuracy mirrors the conservative intellectual tradition: strong on economic predictions derived from supply-side skepticism about government intervention, weak on international affairs and social trends. Its call on Biden stimulus inflation — that the $1.9T American Rescue Plan would prove inflationary — was correct, as was its skepticism about extended pandemic restrictions producing durable economic benefits.</p>
-    <p>National Review systematically underestimated the severity of climate change, overstated the economic costs of environmental regulation, and struggled with international predictions where the conservative framework provided less guidance. Its foreign policy predictions largely tracked the same establishment consensus that Foreign Affairs produced — with similar error rates in both directions.</p>
+    <h3>Bloomberg &nbsp;<span class="badge correct">58.5% strict</span> &nbsp;Tier 3</h3>
+    <div class="pub-meta">Markets-focused centrist · N=41 · Economics, finance, global business</div>
+    <p>Bloomberg's editorial board is a consensus-tracking institution. It follows the Fed, the IMF, and the median financial analyst view, and its track record shows what that approach produces: above-average accuracy in stable periods when consensus is right, sharp failure at inflection points when consensus is wrong.</p>
+    <p>Its worst prediction: recommending the Fed "keep steady" with its gradual approach in February 2022 — just weeks before inflation hit 9.1% and the Fed launched its most aggressive tightening cycle in four decades. Bloomberg was advocating gradualism at the precise moment requiring emergency action. Its best prediction: calling the March 2023 banking crisis (SVB, Signature, Credit Suisse) as containable, against market panic, when GDP ended up growing 3.1% that year. Bloomberg performs best when it breaks from consensus; it suffers most when it amplifies it.</p>
   </div>
 
   <div class="pub-block">
-    <h3>8. Washington Post &nbsp;<span class="badge partial">38% strict</span></h3>
-    <div class="pub-meta">Centre-left American newspaper · N=95 · US politics, democracy, foreign policy</div>
-    <p>The WaPo board's 38% strict accuracy understates some genuinely impressive calls. Its prediction that democratic erosion in a second Trump term would proceed through incremental institutional subversion rather than dramatic action — firing inspectors general, executive order overreach, regulatory capture — proved prescient. It correctly predicted NATO would emerge structurally strengthened by Putin's aggression (European defense spending rose 11% in 2026; all allies exceeded the 2% GDP target for the first time).</p>
-    <p>Where WaPo fails is in its hawkish optimism on Ukraine. Its 2023 prediction that the counteroffensive would prove "decisive" for the war was wrong — the offensive stalled, Russia held its lines, and Ukraine was eventually pressured into a ceasefire on unfavorable terms. The board's tendency to frame its preferences as predictions — that democracies should win, therefore they will — produced its most significant errors.</p>
+    <h3>Financial Times &nbsp;<span class="badge partial">54.5% strict</span> &nbsp;Tier 3</h3>
+    <div class="pub-meta">Centrist, market-liberal · N=44 · Economics, global finance, UK/European politics</div>
+    <p>The FT's most telling characteristic is inverted calibration: its hedged predictions outperform its confident ones. This suggests the board is most wrong precisely when it has the strongest view — a pattern that should make readers more cautious, not more persuaded, when the FT makes confident claims.</p>
+    <p>Its Brexit economic damage predictions (fully vindicated), Keir Starmer becoming PM (correct), and ANC losing its majority (correct) are genuine achievements. Its misses reveal a recurring blind spot: American political events seen through a European centrist lens. The board failed to anticipate Trump's 2024 comeback, predicted an S&P crash in a year the market returned +25%, and called 2025 its "worst-ever" prediction year internally. The European analytical framework that makes it excellent on UK, EU, and institutional finance questions consistently misleads it on US populism.</p>
   </div>
 
   <div class="pub-block">
-    <h3>9. Bloomberg &nbsp;<span class="badge partial">38% strict</span></h3>
-    <div class="pub-meta">Markets-focused centrist · N=130 · Economics, finance, global business</div>
-    <p>Bloomberg's editorial board is a consensus-tracking institution — it follows the Fed, the IMF, and the median financial analyst view, then argues for that view to be implemented. This produces a characteristic pattern: correct in steady-state periods (when the consensus is roughly right), badly wrong at inflection points (when consensus is most confidently wrong).</p>
-    <p>Its worst prediction of the entire dataset was its February 2022 call for the Fed to "keep steady" with its gradual approach, just weeks before inflation peaked at 9.1% and the Fed launched its most aggressive tightening cycle in 40 years. Bloomberg was recommending gradualism at the precise moment when the situation required emergency intervention.</p>
-    <p>Its best calls came in contrarian moments: correctly predicting that the March 2023 banking crisis would not wreck the economy (when market sentiment was panicked), correctly calling China's post-COVID recovery as modest rather than explosive, and correctly identifying that Europe could reduce Russian gas dependence without catastrophe. Bloomberg performs best when it resists the herd; it suffers most when it amplifies it.</p>
+    <h3>The Atlantic &nbsp;<span class="badge partial">54.1% strict</span> &nbsp;Tier 3</h3>
+    <div class="pub-meta">Centre-left American magazine · N=37 · Culture, democracy, science, politics</div>
+    <p>The Atlantic's domain-level variance is extreme. On pandemic and health predictions, it achieved 100% accuracy — its scientific-establishment lens worked perfectly for a period when scientific establishment consensus was largely correct. On democracy predictions in the Recent window, it scored 16.7% — the worst single-domain performance in the dataset for any mainstream publication.</p>
+    <p>The democracy failure follows a clear pattern: the Atlantic systematically overestimates institutional fragility. "The republic is at a turning point" and "institutions may not survive" predictions consistently overstated the speed and irreversibility of democratic erosion. Courts pushed back. Midterm dynamics remained contested. Democratic adaptation proved more resilient than the publication's rhetoric suggested. The Atlantic requires urgency to sustain reader engagement; that urgency becomes an analytical liability when institutions are stressed but not broken.</p>
   </div>
 
   <div class="pub-block">
-    <h3>10. Politico &nbsp;<span class="badge partial">37% strict</span></h3>
-    <div class="pub-meta">DC establishment · N=52 · US electoral politics, Congress, campaign strategy</div>
-    <p>Politico's editorial coverage is unusual: unlike most boards, it focuses heavily on near-term electoral mechanics rather than long-term policy trajectories. This makes its predictions more verifiable in principle but also more exposed to polling-dependency bias. Politico's errors concentrate in a single direction: systematic overestimation of Democratic competitiveness in toss-up races and states.</p>
-    <p>In every cycle from 2020 through 2026, when Politico called a race as competitive and close, the bias ran in one direction: it overestimated Democratic performance. This is consistent with pollster selection bias (Politico's primary sources are live-interview polls that historically oversample Democrats) and with the "horse race" framing that incentivizes competitive narratives regardless of underlying evidence.</p>
-    <p>On policy matters outside elections, Politico's track record is thin but not systematically biased. The board simply covers electoral politics more than most, which concentrates its errors in that domain.</p>
+    <h3>Foreign Affairs &nbsp;<span class="badge partial">53.3% strict</span> &nbsp;Tier 3</h3>
+    <div class="pub-meta">Foreign policy establishment · N=45 · Geopolitics, international relations, grand strategy</div>
+    <p>Foreign Affairs was built to analyze decades-long structural trends, not quarterly predictions. Its 77.8% accuracy on geopolitical structural trends in the Recent window is the best single-domain performance in the dataset. It correctly called China's peak-growth trajectory, democratic backsliding as a global trend, and climate as a security multiplier — all requiring long-range judgment that proved correct.</p>
+    <p>But specific-outcome predictions are another matter. Foreign Affairs embeds a "gradualism bias": its analytical framework assumes institutional persistence and incremental change, which generates systematic blindness to discontinuous events. Its most spectacular failure — "the Middle East is quieter than it has been in decades," published approximately eight days before Hamas's October 7 attack — resulted in an unprecedented stealth correction (the language was scrubbed from the online version without acknowledgment). Its Ukraine predictions were also consistently too optimistic about Western-backed outcomes and too quick to predict Russian resource exhaustion that did not materialize.</p>
   </div>
 
   <div class="pub-block">
-    <h3>11. Wall Street Journal &nbsp;<span class="badge wrong">30% strict</span></h3>
-    <div class="pub-meta">Conservative, market-focused · N=81 · US economics, tax policy, regulation</div>
-    <p>The WSJ editorial board's 30% strict accuracy masks a significant internal split. On some economic questions — predicting that Biden's $1.9T American Rescue Plan would produce inflation, calling the IRA's eventual cost well above the CBO's initial estimate — the board was right. On its signature ideological commitments, it was wrong in ways that now constitute an empirical record.</p>
-    <p>The Tax Cuts and Jobs Act (TCJA) of 2017 was the WSJ board's central economic prediction: that corporate tax cuts would pay for themselves through growth. The outcome is now clear. Federal revenue declined 37% relative to pre-TCJA projections. The CBO estimated TCJA increased the primary deficit by $1.3 trillion over ten years. Brookings found the supply-side reaction "vanishingly small." The prediction was not a matter of honest uncertainty — the board made confident, specific forecasts that were decisively refuted.</p>
-    <p>The WSJ also systematically overestimated the economic damage from environmental regulation. Its predictions that climate and clean energy policies would devastate manufacturing and employment were not borne out. US manufacturing employment proved more resilient than the board predicted, and the energy transition proceeded without the economic catastrophe it forecast.</p>
+    <h3>Wall Street Journal &nbsp;<span class="badge wrong">46.2% strict</span> &nbsp;Tier 4</h3>
+    <div class="pub-meta">Conservative, market-focused · N=39 · US economics, tax policy, regulation</div>
+    <p>The WSJ's 46.2% — below the flip of a coin — is almost entirely explained by one ideological commitment: supply-side economics as a predictive framework. Where that framework generated genuine insight (predicting that Biden's $1.9T ARP would fuel inflation, correctly calling the IRA's eventual cost well above CBO projections), the board performed well. Where the framework predicted that tax cuts pay for themselves through growth, the record is clear: TCJA corporate tax revenue declined 37% relative to projections, the CBO estimated a $1.3T deficit increase over ten years, and Brookings found the supply-side reaction "vanishingly small."</p>
+    <p>The WSJ Early window (2019–2021) showed 100% accuracy on domestic politics, suggesting the board is capable of strong analytical judgment when its economic ideology isn't the relevant variable. The Recent window collapse to 36.8% reflects what happens when government-skepticism bias leads to consistent wrong-direction predictions about program effectiveness (IRA clean energy jobs materializing, inflation normalizing, economic resilience holding).</p>
   </div>
 
   <div class="pub-block">
-    <h3>12. Foreign Affairs &nbsp;<span class="badge wrong">29% strict</span></h3>
-    <div class="pub-meta">Institutionalist / foreign policy establishment · N=112 · Geopolitics, international relations, grand strategy</div>
-    <p>Foreign Affairs publishes the foreign policy establishment's considered views — and those views, systematically evaluated, proved poorly calibrated against a world experiencing genuine discontinuities. The board's errors cluster around a common pattern: excessive faith in institutional resilience, underestimation of revisionist actors' willingness to use force, and blindness to events that rupture the gradual-change assumption.</p>
-    <p>The most consequential error in the entire dataset: Foreign Affairs published an analysis concluding that the Middle East was "quieter than it had been in decades" in the fall of 2023. It was published approximately eight days before Hamas's October 7 attack — 1,200 people killed, triggering the most destructive Gaza war in history and a major Hezbollah conflict in Lebanon. Foreign Affairs subsequently scrubbed the language from its online version in an unprecedented editorial correction.</p>
-    <p>On Ukraine, Foreign Affairs was consistently too optimistic about Western-backed Ukrainian victory and too slow to recognize Russian adaptation. It missed the full-scale invasion's consequences for the European order. On China, it correctly identified demographic and property-sector risks but overstated Taiwan war probability. Its one genuine insight: Richard Haass's 2023 stalemate prediction, which proved correct when the counteroffensive failed.</p>
-  </div>
-
-  <div class="pub-block">
-    <h3>13. ZeroHedge &nbsp;<span class="badge wrong">17% strict</span></h3>
-    <div class="pub-meta">Hard right / financial doom · N=84 · Financial markets, monetary policy, global collapse</div>
-    <p>ZeroHedge occupies a category of its own. Unlike the other twelve publications in this sample, its inaccuracy is not explained by ideology-correlated blind spots or calibration failures — it is explained by a single, persistent error: relentless, indiscriminate bearishness that produces correct predictions whenever bad things happen and incorrect predictions at all other times.</p>
-    <p>ZeroHedge's equity predictions were wrong in five of six years from 2020 to 2025. Its dollar collapse narrative, repeated continuously, never materialized — the DXY ended the period at approximately where it started. It predicted a major US recession virtually every quarter from 2020 to 2025; the only recession was the two-month COVID shock of February to April 2020. It warned of banking system collapse so frequently that when SVB failed in 2023, it claimed vindication — but it had not specifically identified SVB risk, making this a textbook stopped-clock call rather than a genuine prediction.</p>
-    <p>ZeroHedge's one credible success was early, persistent warnings about inflation in 2020 and 2021, when the Fed and most mainstream outlets maintained the "transitory" position. On this question, it was both early and right. But its subsequent prediction that inflation would spiral into hyperinflation proved wrong as CPI declined from 9.1% in 2022 to approximately 2.6% by 2025. The pattern is consistent: ZeroHedge is correct that bad things sometimes happen; it is wrong that bad things always happen imminently.</p>
-    <p>Gold remains ZeroHedge's most durable prediction, and its most defensible: gold tripled from ~$1,520 to ~$4,150 over the period. But this too is a broken-clock success — the board is perennially bullish on gold, so attributing prescience to any specific gold prediction requires caution.</p>
+    <h3>ZeroHedge &nbsp;<span class="badge anti">15.9% strict — Anti-signal</span> &nbsp;Tier 5</h3>
+    <div class="pub-meta">Hard right / financial doom · N=44 · Financial markets, monetary policy, geopolitical collapse · 0 hedged predictions; 100% of errors unidirectional</div>
+    <p>ZeroHedge is in a category of its own. Unlike the other publications in this sample, its inaccuracy is not explained by ideology-correlated blind spots or miscalibrated confidence — it is explained by a single, permanent editorial commitment to catastrophism that generates wrong predictions at high frequency and in one direction only.</p>
+    <p>Over 2019–2025, ZeroHedge predicted US recession in every year. The US experienced one brief, shallow COVID recession (two months) and no recession during 2022–2025 despite aggressive Fed tightening. It predicted dollar collapse persistently; the DXY ended the period approximately flat. Equity markets returned roughly +70% over six years; ZeroHedge was bearish on equities in five of six years. It never hedges — not once across 44 extracted predictions — and its confident predictions hit 5.9% accuracy in the Recent window.</p>
+    <p>Against the appropriate base rate for its specific claims (hyperinflation, dollar collapse, banking system meltdown), ZeroHedge likely performs at or below chance. The practical implication: a reader who systematically inverts ZeroHedge's predictions would achieve approximately 84% accuracy — better than any mainstream publication in this sample achieves normally. It is not merely uninformative; it is a reliable contrarian indicator.</p>
+    <p>Its genuine correct calls deserve acknowledgment: early COVID pandemic risk (ahead of many mainstream outlets), the 2021–2022 inflation surge, and gold's multi-year rise. These are real. But the inflation call was shared by the WSJ and Larry Summers; ZeroHedge's additional claim that inflation would spiral into hyperinflation was wrong. The gold call reflects permanent bullishness on gold, not a specific prediction.</p>
   </div>
 
   <h2 id="hall-of-fame">Hall of fame: the most impressive correct calls</h2>
 
-  <p>Across 1,052 predictions, a handful stand out as genuinely difficult calls that required going against consensus, resisting institutional pressure, or reasoning through complex causal chains in advance.</p>
+  <p>Some predictions stand out not just for being right but for being right when it was costly to say so — against prevailing narrative, before consensus crystallized, at a moment when the correct call required going against institutional pressure.</p>
 
-  <h3>Guardian — NHS austerity and healthcare collapse (2014–2022)</h3>
-  <p>Beginning in the early 2010s, the Guardian's editorial board argued consistently that Conservative austerity would produce a structural NHS crisis within a decade. At the time, the official position was that efficiency savings would compensate for spending restraint. By 2026, NHS waiting lists exceeded 7.28 million pathways, only 60% of patients received care within the constitutional 18-week target, and BMJ researchers attributed 30,000 excess deaths to the 2015 cuts alone. This was a long-horizon prediction made against political headwinds, grounded in structural analysis, and vindicated comprehensively.</p>
+  <div class="fame-block">
+    <h3>WaPo — "Trump's election lies will lead to violence" (September 2020)</h3>
+    <p>Published three months before January 6, when many mainstream commentators dismissed such concerns as alarmist. Both elements of the prediction materialized precisely: sixty-plus failed lawsuits and the Capitol attack. The single most consequential correct prediction in this entire dataset.</p>
+  </div>
 
-  <h3>WaPo — Incremental democratic subversion mechanism (2019–2020)</h3>
-  <p>The Washington Post editorial board, in 2019 and 2020, specifically predicted that the main threat to US democratic institutions was not a dramatic coup but incremental subversion: the replacement of independent oversight officials, the reclassification of civil servants to enable mass firing, executive orders bypassing congressional authority. This specific mechanism — rather than the spectacular-event narrative most other outlets emphasized — proved exactly correct in 2025–2026. V-Dem documented a 24% decline in the US Liberal Democracy Index in a single year, driven by the precise institutional mechanisms WaPo identified.</p>
+  <div class="fame-block">
+    <h3>New Statesman — "Liz Truss is temperamentally ill-suited to these times" (August 2022)</h3>
+    <p>Published before Truss even took office. She lasted 49 days — the shortest-serving Prime Minister in British history. The editorial board's judgment about the mismatch between her ideology and the economic moment was devastatingly prescient, made when she was enjoying a post-leadership-victory polling bounce.</p>
+  </div>
 
-  <h3>WSJ — Biden stimulus inflation (2021)</h3>
-  <p>When the American Rescue Plan passed in March 2021, the mainstream consensus held that inflation was a manageable risk and the stimulus was appropriate. The WSJ editorial board argued loudly that $1.9 trillion in demand stimulus on top of an already-recovering economy would produce significant inflationary pressure. Larry Summers and Olivier Blanchard made the same argument; the Biden administration dismissed it. By June 2022, CPI had peaked at 9.1%. The WSJ got this right when institutional consensus got it wrong.</p>
+  <div class="fame-block">
+    <h3>New Statesman — "Labour's landslide is a magnificent house of cards" (July 2024)</h3>
+    <p>Published immediately after Labour's 411-seat majority. Within 18 months, Starmer's approval fell to -46%, 97 Labour MPs called for his resignation, and he resigned as PM in June 2026. The "house of cards" metaphor proved strikingly literal — and was published at the moment of maximum Labour triumphalism.</p>
+  </div>
 
-  <h3>Bloomberg — Banking crisis containment (March 2023)</h3>
-  <p>When Silicon Valley Bank collapsed in March 2023, taking Signature Bank and contributing to the Credit Suisse crisis, market sentiment moved sharply toward recession expectations. Bloomberg's editorial board argued, against prevailing panic, that the banking crisis would be contained and would not wreck the broader economy. This required confidence in regulatory mechanisms (FDIC guarantees, Fed lending facilities) at a moment when those mechanisms were untested at scale. The board was right: GDP grew 3.1% in 2023, and the banking system stabilized rapidly.</p>
+  <div class="fame-block">
+    <h3>WSJ — "Inflation will not be transitory" (February 2021)</h3>
+    <p>Among the earliest prominent editorial calls that emerging price pressures were structural. Made when the Fed, the Biden administration, and most center-left publications insisted prices would self-correct. CPI surged from 1.4% to 9.1% over the next 16 months — the highest inflation in forty years.</p>
+  </div>
 
-  <h3>Foreign Affairs — Haass stalemate prediction (2023)</h3>
-  <p>Most of the foreign policy establishment in early 2023 remained optimistic about Ukrainian offensive capability. Richard Haass, writing in Foreign Affairs, argued that the war was heading toward stalemate and required a fundamental reassessment of Western strategy. This was contrary to the dominant narrative. The 2023 counteroffensive subsequently failed to achieve significant territorial gains, Russia's defensive lines held, and the war settled into attritional warfare. Haass's stalemate prediction was vindicated when the counteroffensive's failure became clear by late 2023.</p>
+  <div class="fame-block">
+    <h3>NYT — "Excusing January 6 would invite more such attempts" (January 2021)</h3>
+    <p>A prediction about the long-term consequences of Senate acquittal that played out over five years. Trump ran again, won, and pardoned January 6 rioters on Day 1 of his second term. The emboldenment cycle the board identified was confirmed with uncomfortable precision.</p>
+  </div>
 
-  <h3>Guardian — Conservative party collapse (2022–2024)</h3>
-  <p>Throughout 2022 and 2023, the Guardian's editorial board argued that Conservative governance had become terminally dysfunctional and that the party faced historic electoral defeat. Many political commentators expected the Conservatives to recover once they replaced Johnson. The board maintained its structural pessimism: the damage from Partygate, economic mismanagement, and leadership instability was irreversible within a parliamentary cycle. The July 2024 result — 121 seats, the worst Conservative defeat in party history — validated this assessment.</p>
+  <div class="fame-block">
+    <h3>NR — "Biden's cognitive decline will worsen" (February 2024)</h3>
+    <p>Published four months before the catastrophic June 2024 debate that effectively ended Biden's candidacy. National Review was significantly ahead of mainstream media on this issue. The framing was partly partisan, but the core analytical judgment was correct when most DC press corps coverage was still treating cognitive concerns as bad-faith Republican talking points.</p>
+  </div>
 
-  <h2 id="hall-of-shame">Hall of shame: the most consequential wrong calls</h2>
+  <h2 id="hall-of-shame">Hall of shame: the most consequential misses</h2>
 
-  <p>Some wrong predictions are harmless errors — mistimed forecasts about oil prices or election margins. Others represent genuine failures of analysis at critical moments, where the outlet's institutional credibility amplified a flawed assessment into the policy conversation.</p>
+  <p>Some wrong predictions are harmless errors — mistimed calls on market levels or election margins. Others represent failures at critical moments, where institutional credibility amplified a flawed assessment into the policy conversation.</p>
 
-  <h3>Foreign Affairs — "Middle East quieter than in decades" (September 2023) <span class="badge shame">Worst in dataset</span></h3>
-  <p>Published approximately eight days before Hamas's October 7 attack, which killed 1,200 people and triggered the most destructive Gaza war in history. The article's claim that the region had achieved a degree of relative calm not seen in decades was not a minor error of timing — it reflected a systematic failure to model non-state actor capacity and Hamas's strategic objectives. Foreign Affairs subsequently scrubbed the language from its online version, an unprecedented correction for a journal that rarely acknowledges error.</p>
+  <div class="shame-block">
+    <h3>Foreign Affairs — "The Middle East is quieter than it has been in decades" (September 2023)</h3>
+    <p>Published approximately eight days before Hamas's October 7 attack, which killed 1,200 people and triggered the most destructive Gaza war in history. It was not an obscure piece — it was a prominent Strategic Survey analysis of regional stability. Foreign Affairs subsequently scrubbed the language from the online version without acknowledgment: an unprecedented stealth correction for a journal that almost never edits published work.</p>
+  </div>
 
-  <h3>Guardian — Starmer's progressive government (2024)</h3>
-  <p>The Guardian anticipated that Starmer's landslide would produce a new progressive settlement. Instead, Labour's approval collapsed within months. Economic growth flatlined. Starmer's approval fell to the lowest of any prime minister in fifty years of polling data. He resigned in June 2026. The prediction was less a forecast than an expression of hope; the board's analytical framework failed to model the institutional constraints on any incoming UK government and Labour's internal fragmentation.</p>
+  <div class="shame-block">
+    <h3>NYT — Warren and Klobuchar "best equipped" for the presidency (January 2020)</h3>
+    <p>The board's most high-profile prediction was its most embarrassing failure. The unprecedented dual endorsement — first in the paper's history — was issued with considerable confidence about electability and the demands of the moment. Neither candidate won a single primary state. Biden won the nomination and the presidency. The failure revealed disconnection from the primary electorate, particularly Black voters whose preferences proved decisive.</p>
+  </div>
 
-  <h3>NYT — Marijuana legalization and harm (2014)</h3>
-  <p>The NYT editorial board argued in 2014 that marijuana legalization would not lead to meaningfully greater use or serious harm. Daily cannabis users have since increased from 6 million to 21.4 million — a 257% increase. Daily cannabis users now exceed daily alcohol drinkers. Hospitalizations for marijuana-linked psychotic disorders have increased. The board published an explicit retraction in February 2026, stating: "It is now clear that many of these predictions were wrong. Legalization has led to much more use." It is the only formal editorial apology in this dataset.</p>
+  <div class="shame-block">
+    <h3>ZeroHedge — Perpetual US recession predictions (every year, 2019–2025)</h3>
+    <p>ZeroHedge predicted imminent US recession in every single year of the sample period. The US experienced one brief COVID recession (two months in 2020) and no recession during 2022–2025 despite the most aggressive Fed tightening cycle in decades. This is not a forecasting error; it is a structural refusal to update, refreshed quarterly with new catastrophist framing and new wrong specific predictions.</p>
+  </div>
 
-  <h3>WSJ — Tax cuts will pay for themselves (2017)</h3>
-  <p>The WSJ editorial board's central economic prediction of the decade was that the TCJA corporate tax cuts would generate sufficient growth to offset their revenue cost. Corporate tax revenue declined 37% relative to pre-TCJA projections. The CBO estimated a $1.3 trillion deficit increase over ten years. Brookings found the supply-side reaction "vanishingly small." This was not an honest forecasting error but a prediction in direct service of ideological priors, maintained against substantial contradicting evidence.</p>
+  <div class="shame-block">
+    <h3>Bloomberg — "Keep the Fed gradual" (February 2022)</h3>
+    <p>Bloomberg recommended the Federal Reserve maintain its cautious approach in February 2022, with inflation already at 7.5%. Four months later, inflation peaked at 9.1%. The Fed responded with seven rate hikes in 2022, including four consecutive 75-basis-point increases. Bloomberg was advocating gradualism at precisely the moment requiring emergency intervention. Its own self-correction came only after it was already clear the cautious approach had been catastrophically wrong.</p>
+  </div>
 
-  <h3>Bloomberg — Keep the Fed gradual (February 2022)</h3>
-  <p>Bloomberg recommended the Federal Reserve maintain its gradual tightening approach in February 2022, when inflation was already at 7.5%. Four months later, inflation peaked at 9.1%. The Fed responded with seven rate hikes in 2022, including four consecutive 75-basis-point increases — the most aggressive cycle in four decades. Bloomberg's recommendation, if followed, would have been catastrophically behind the curve at precisely the moment that decisive action was most needed.</p>
+  <div class="shame-block">
+    <h3>New Statesman — "Longest recession for a century" (November 2022)</h3>
+    <p>The NS endorsed the Bank of England's worst-case scenario without hedging. The actual recession that followed was two quarters of minimal contraction — the shallowest in modern history, not the most severe in a century. This is the clearest example in the dataset of magnitude optimism/pessimism: a publication that gets the direction right (there was a recession) but overstates severity by an enormous factor, revealing the center-left publications' systematic tendency to catastrophize economic outcomes.</p>
+  </div>
 
-  <h3>FT — Trump will not win (2024)</h3>
-  <p>The FT editorial board failed to anticipate either Biden's withdrawal from the race or Harris's inability to overcome the structural headwinds of incumbency and inflation. Its implicit prediction that Biden would "squeak through" — made before Biden dropped out — proved wrong in both halves: Biden didn't run, and his replacement lost decisively. The miss reflected a broader European misreading of American electoral dynamics that produced similar errors across the UK press.</p>
+  <div class="shame-block">
+    <h3>NR — "Trump will suffer another highly consequential defeat" (repeated 2022–2024)</h3>
+    <p>National Review's institutional anti-Trump position generated confident predictions across multiple editorials over two years that Trump's legal jeopardy, poll standing, or character would prevent electoral success. Trump won 312 electoral votes and the popular vote in November 2024. The prediction was not a single mistake but a repeated, unupdated analytical judgment that proves conviction is not the same as accuracy.</p>
+  </div>
 
-  <h2 id="systematic-biases">Systematic biases by publication</h2>
+  <h2 id="biases">Systematic biases by publication</h2>
 
-  <p>Beyond individual errors, the most analytically useful finding is that each publication makes its errors in predictable directions. These biases are stable across time and topic domains, suggesting they reflect institutional culture, audience incentives, or worldview rather than random noise.</p>
+  <p>Each publication makes its errors in predictable directions. These biases are stable across time and topic domains, which means they reflect institutional culture, audience incentives, or worldview rather than random noise — and which means readers can systematically correct for them.</p>
 
   <ul class="bullets">
-    <li><strong>Guardian / New Statesman:</strong> In-group optimism bias — systematically accurate on Conservative dysfunction, systematically wrong on center-left government performance. The error mode switches when their preferred party takes power.</li>
-    <li><strong>FT:</strong> Inverted calibration — hedged predictions outperform confident ones. The board is most wrong when it is most sure. Also: American political events consistently misjudged through a European lens.</li>
-    <li><strong>NYT:</strong> Falsifiability avoidance — the board tends toward normative framing ("must," "should") that insulates predictions from verification. When it does commit, accuracy is average. Also: institutional norms overestimated — predictions about Congress, courts, and norms restoring themselves proved optimistic.</li>
-    <li><strong>WaPo:</strong> Hawkish wishful thinking on conflict outcomes — correct on the mechanisms of geopolitical and domestic threats, wrong on predicted resolutions (Ukraine victory, democracy resilience in specific indicators).</li>
-    <li><strong>Bloomberg:</strong> Consensus-amplification bias — most accurate when it breaks from consensus (banking crisis containment, China slowdown); most wrong when it follows the median analyst view at turning points (Feb 2022 inflation, COVID recovery).</li>
-    <li><strong>Politico:</strong> Systematic Democratic lean in competitive races — every significant electoral prediction error ran in the same direction. Likely caused by polling-source selection bias rather than ideological intent.</li>
-    <li><strong>WSJ:</strong> Supply-side invariance — the board's economic framework predicts that markets are resilient to taxation and regulation, and that deficits from tax cuts are offset by growth. This prediction has been refuted repeatedly by the evidence, but the framework has not been revised.</li>
-    <li><strong>Foreign Affairs:</strong> Gradualism bias — the board consistently underestimates the probability of discontinuous events (invasions, attacks, collapses). Its analytical frame assumes that the current order will persist and change will be incremental. Both Ukraine 2022 and October 7 were major violations of this assumption that the board failed to anticipate.</li>
-    <li><strong>Economist:</strong> Equilibration bias — its classical-liberal framework predicts that politics and markets tend toward stable equilibria. This generates consistent underestimation of political discontinuities and self-reinforcing escalation dynamics.</li>
-    <li><strong>ZeroHedge:</strong> Permanence of doom bias — not a calibrated pessimism but a structural commitment to crisis narratives. Every event is interpreted as confirming imminent collapse; every period of stability is framed as the calm before the storm. The base rate problem: if you predict catastrophe every month, you will eventually be right about a catastrophe.</li>
+    <li><strong>New Statesman / Guardian:</strong> In-group optimism bias — accurate on Conservative dysfunction, wrong on center-left government performance. The error mode inverts when their preferred party takes power. Apply a heavy skepticism discount to any prediction about Labour or progressive governments achieving their stated goals quickly.</li>
+    <li><strong>NYT:</strong> Falsifiability avoidance combined with overconfidence on committed claims. The board rarely makes specific predictions; when it does, it rarely hedges. Calibration is poor because confidence language is near-uniform regardless of actual uncertainty.</li>
+    <li><strong>WaPo:</strong> Asymmetric accuracy — excellent on adversary behavior (authoritarian actors, illiberal governments), overoptimistic on Western-backed outcomes (Ukrainian offensives, democratic resilience thresholds). Read for the former; discount the latter.</li>
+    <li><strong>Bloomberg:</strong> Consensus amplification — tracks median analyst views, adds urgency. Most valuable when it breaks from consensus (containable banking crisis, modest China recovery); dangerous at turning points (February 2022 inflation).</li>
+    <li><strong>FT:</strong> American political blind spot — European centrist framework consistently misleads on US populism. Excellent on UK, EU, and institutional finance; apply substantial skepticism to US electoral and political predictions.</li>
+    <li><strong>Economist:</strong> Equilibration bias — predicts that markets and politics tend toward stable equilibria, underestimates self-reinforcing escalation dynamics and political discontinuities. Balanced error distribution; most useful for breadth rather than conviction.</li>
+    <li><strong>National Review:</strong> Dual bias — supply-side invariance on economics (government programs routinely predicted to fail; often don't fail as dramatically as claimed) plus anti-Trump conviction on electoral predictions (confident Trump-defeat predictions all wrong post-2020).</li>
+    <li><strong>WSJ:</strong> Supply-side framework failure — confident predictions derived from the premise that tax cuts pay for themselves and government programs cost more than benefits have systematically not held up against data. Strong on inflation skepticism; unreliable on fiscal projections.</li>
+    <li><strong>Foreign Affairs:</strong> Gradualism bias — analytical frame assumes institutional persistence, generates blindness to discontinuous events. Excellent on structural 20-year trends; poor on specific outcomes and timing. Every major geopolitical shock (Russia 2022, Hamas 2023) was preceded by the publication's assessment of stability.</li>
+    <li><strong>Politico:</strong> Polling dependency — electoral predictions track live-interview polls that historically oversample Democrats. Every significant electoral call error ran in one direction. Calibrated on explicit toss-up ratings; overconfident on structural narratives.</li>
+    <li><strong>ZeroHedge:</strong> Permanent catastrophism — 100% of prediction errors ran in the same direction. Not a calibration problem but a structural editorial commitment that cannot be corrected because it is never updated against evidence. Reliable only as a contrarian indicator.</li>
   </ul>
 
-  <h2 id="meta-findings">What this tells us about expert prediction</h2>
+  <h2 id="information-diet">Information diet recommendations</h2>
 
-  <p>Several meta-level findings emerge from this analysis that are relevant beyond any individual publication.</p>
+  <p>Based on this audit, the optimal information diet for someone who wants to make better predictions — rather than merely stay informed — looks different from the prestige hierarchy of publications:</p>
 
-  <p><strong>Home geography matters more than ideology.</strong> The clearest predictor of editorial accuracy is not political lean but proximity to the subject matter. UK-based outlets dramatically outperform US outlets on UK predictions. Economic publications outperform political publications on economic predictions. The implication is that editorial boards should be read as area specialists, not omniscient observers.</p>
+  <p><strong>For UK politics:</strong> New Statesman first (92% on domestic politics), Guardian second. Apply a heavy skepticism discount to predictions about Labour government performance from either outlet.</p>
 
-  <p><strong>Confidence and accuracy are poorly correlated — and sometimes inversely correlated.</strong> Several publications showed that their most confident claims were less accurate than their hedged ones. This is a well-documented failure mode in forecasting, but it is striking to see it appear in publications with large research staffs and institutional reputations at stake. The mechanisms that produce high confidence (internal agreement, editorial consensus, urgency of tone) do not reliably track the mechanisms that produce correct predictions.</p>
+  <p><strong>For US politics:</strong> WaPo for structural/institutional analysis (excellent on adversary behavior, democratic erosion mechanisms). NYT for committed predictions about democratic institutions. Cross-check with NR for center-right perspective on economics and government programs, but ignore its predictions about Trump electoral outcomes.</p>
 
-  <p><strong>Most editorial predictions are not falsifiable in practice.</strong> Our extraction protocol required setting a high bar, and still we found that many editorials that appeared to make predictions were actually making normative arguments. The largest share of editorial content — across all thirteen publications — was systematically excluded from this analysis because it could not be scored as right or wrong. This means the accuracy numbers here apply to a minority of editorial content: the subset that took genuine predictive risk.</p>
+  <p><strong>For economics:</strong> No publication is consistently reliable. Closest approximations: WSJ on inflation and fiscal pessimism (Early window). Economist for balanced error distribution. Apply a 30–50% discount to the magnitude — not direction — of economic predictions from every publication. All of them overstate economic severity.</p>
 
-  <p><strong>The base rate for correct predictions on complex events is surprisingly low.</strong> A median strict accuracy of 40% might sound like failure. But consider that these are genuinely hard questions — elections in polarized democracies, the trajectory of multi-year wars, the behavior of central banks at inflection points — where even specialists with full access to data frequently err. A 40% strict accuracy rate on questions of this difficulty is not necessarily a mark of failure; it may reflect appropriate difficulty calibration. The outliers in both directions (Guardian at 71%, ZeroHedge at 17%) are more telling than the median.</p>
+  <p><strong>For geopolitics:</strong> WaPo's structural realism framework (what are the incentives?) produced the best specific-outcome geopolitical predictions. Foreign Affairs for structural 20-year trends; discount specific-outcome and timeline predictions heavily.</p>
 
-  <p><strong>Systematic bias is more damaging than random error.</strong> Publications that are wrong in different directions on different questions — where errors reflect genuine uncertainty — are more intellectually honest than publications whose errors all run in one direction. Random errors reflect hard problems; systematic errors reflect worldview failure. By this measure, ZeroHedge, the WSJ on supply-side economics, and Foreign Affairs on discontinuous events represent more serious epistemic failures than outlets with similar accuracy rates but diversified error distributions.</p>
+  <p><strong>What to do with ZeroHedge:</strong> Note the prediction and assign moderate probability to the opposite. This is not a joke. 84% contrarian accuracy is better than the New Statesman manages normally.</p>
+
+  <h2 id="meta">What this tells us about expert prediction</h2>
+
+  <p>Several meta-level findings emerge that extend beyond any individual publication.</p>
+
+  <p><strong>Home geography dominates ideology as a predictor of accuracy.</strong> The clearest variable is not political lean but proximity to the subject. UK-based outlets dramatically outperform US outlets on UK predictions. The ranking should be understood as measuring weighted performance across each publication's typical coverage mix, not its quality at predicting arbitrary questions.</p>
+
+  <p><strong>Ideology determines the direction of errors, not the rate of errors.</strong> Center-left, centrist, and center-right publications cluster between 46–78% strict accuracy. No ideological position has a systematic accuracy advantage; what it has is a systematic direction of misses. This means the optimal strategy is not to find the "best" publication but to triangulate across worldviews, using each publication's errors as predictable corrective data.</p>
+
+  <p><strong>Calibration is not stable.</strong> The same publication can be well-calibrated in one period and inverted in the next. Calibration reflects whether a publication's priors happen to match reality in a given period — not a durable institutional property. This is the most important finding for readers who use publication confidence language as a signal. It is not a reliable one.</p>
+
+  <p><strong>The best editorial boards predict best within genuine expertise, not across all domains.</strong> What distinguishes the top performers is epistemic discipline — willingness to make falsifiable claims, appropriate hedging, and genuine expertise rather than performed confidence. The New Statesman's record isn't explained by being smarter than the WSJ editorial board. It's explained by predicting mostly within its area of deep institutional competence (British politics) and being willing to make bold falsifiable calls in that domain.</p>
 
   <div class="verdict">
-    <div class="vhead">Summary assessment</div>
-    <strong>The best editorial boards are valuable not because they are usually right, but because they are right in informative ways.</strong> The Guardian's austerity predictions were made early, specifically, and against political resistance — making them genuinely informative when vindicated. The WaPo's democratic backsliding mechanism was precisely specified in advance — making it a real contribution to understanding. The worst editorial boards are not merely inaccurate; they are systematically biased in ways that mislead readers about what the world is likely to do. The difference between these two categories is not intelligence or resources. It is epistemic discipline: willingness to make falsifiable claims, update on evidence, and correct when wrong.
+    <div class="vhead">The fundamental insight</div>
+    <strong>Editorial boards predict well within their zone of genuine expertise and ideological alignment, and poorly outside it.</strong> No publication has found a way to consistently overcome its own worldview to make accurate predictions against its editorial line. This means the most reliable prediction strategy for readers is not to find the "best" publication and trust it, but to triangulate across publications with different worldviews, apply systematic corrections for known biases (pessimism from the left, government-skepticism from the right, consensus-tracking from the center), and above all discount any editorial board's confidence, since nearly every publication in this sample is overconfident relative to its actual accuracy rate.
   </div>
 
 </main>
